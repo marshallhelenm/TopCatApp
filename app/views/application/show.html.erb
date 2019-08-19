@@ -1,0 +1,24 @@
+<div>
+    <%# @cat.img_url inside an image tag %>
+    <%# @cat.name %>
+    <%= button_to 'Edit Your Cat', edit_cat_path(@cat) %>
+    <%= button_to 'Delete Your Cat', '/cats/:id/destroy', data: {confirm: 'Are you sure you want to delete this cat? This action cannot be undone.', :method => :delete} %>
+
+</div>
+
+<div>
+    <%# how can we make a picture a button? CSS yo %>
+    <%= form_tag 'path to start playing?????', :method => :get do %>
+        <%= submit_tag 'Play' %>
+    <% end %>   
+
+</div>
+
+<div>
+    <%= button_to 'High Scores', '/cats/high_scores' %><br>
+
+    <%= button_to 'My Stats', '/cats/stats' %><br>
+
+    <%= button_to 'Rules', '/application/rules' %><br>
+
+</div>
