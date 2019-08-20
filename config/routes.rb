@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post '/login', to: "auth#verify"
   get '/home', to: "screens#show"
   delete '/cats', to: "cats#destroy", as: 'delete'
+  get '/Play', to: "neighborhoods#index"
   # get '/new', to: "users#new", as: '/signup'
   resources :families
   resources :cats
