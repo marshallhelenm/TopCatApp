@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get '/login', to: "auth#login"
+  post '/login', to: "auth#verify"
+  # get '/new', to: "users#new", as: '/signup'
   resources :families
   resources :cats
   resources :events
   resources :neighborhoods
   resources :users
-  resources :application
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

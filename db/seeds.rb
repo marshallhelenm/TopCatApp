@@ -12,7 +12,7 @@ Neighborhood.destroy_all
 Event.destroy_all
 User.destroy_all
 
-u1 = User.create(username: "testuser")
+u1 = User.create(username: "testuser", password: "test")
 
 c1 = Cat.create(name: "Crookshanks", breed: "Orange Tabby", description: "The size of a small lion.", user_id: u1.id)
 c1.set_stats

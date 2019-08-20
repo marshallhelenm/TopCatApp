@@ -13,7 +13,9 @@ class UsersController < ApplicationController
     end
 
     def create
+        byebug
         @user = User.new(user_params)
+        # byebug
         @user.save
     end
 
@@ -32,6 +34,7 @@ class UsersController < ApplicationController
     private
 
     def grab_user
+        # byebug
         User.find(params[:id])
     end
 
