@@ -20,4 +20,10 @@ class AuthController < ApplicationController
         end
     end 
 
+
+    def logout
+        session.clear
+        redirect_to login_path
+    end
+    
 end

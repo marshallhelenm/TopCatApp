@@ -1,5 +1,7 @@
 class NeighborhoodsController < ApplicationController
     before_action :grab_neighborhood, only: [:show, :edit, :update, :destroy]
+    before_action :set_user
+
 
     def index
         @neighborhoods = Neighborhood.all

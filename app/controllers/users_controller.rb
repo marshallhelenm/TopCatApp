@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
     before_action :grab_user, only: [:show, :edit, :update, :destroy]
+    
 
-    # def index
-    #     @users = User.all
-    # end
+    def index
+        @users = User.all
+    end
     
     def show
         #a page for my account info, which includes an option to edit your account
@@ -14,7 +15,6 @@ class UsersController < ApplicationController
     end
 
     def create
-        byebug
         @user = User.new(user_params)
         if @user.save
             redirect_to '/cats/new'

@@ -1,5 +1,7 @@
 class FamiliesController < ApplifamilyionController
     before_action :grab_family, only: [:show, :edit, :update, :destroy]
+    before_action :set_user
+
 
     def index
         @families = Family.all
