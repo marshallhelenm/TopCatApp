@@ -1,5 +1,7 @@
 class TerritoriesController < ApplicationController
     before_action :grab_territory, only: [:show, :edit, :update, :destroy]
+    before_action :set_user
+
 
     def index
         @territories = Territory.all

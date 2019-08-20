@@ -1,5 +1,6 @@
 class CatsController < ApplicationController
     before_action :grab_cat, only: [:show, :edit, :update, :destroy]
+    before_action :set_user
 
     def index
         @cats = Cat.all
@@ -13,10 +14,10 @@ class CatsController < ApplicationController
     end
 
     def create
-        byebug
-        @cat = Cat.new(name: params[:cat][:name], breed: params[:cat][:breed], description: params[:cat][:description], user_id: params[:cat][:user_id], img_url: params[:cat][:img_url])
+        @cat = Cat.new(cat_params)
         @cat.set_stats
         @cat.save
+        redirect_to '/home'
     end
 
     def edit
@@ -35,7 +36,7 @@ class CatsController < ApplicationController
     private
 
     def grab_cat
-        Cat.find(params[:id])
+        Cat.find(params[:cat][:id])
     end
 
     def cat_params
