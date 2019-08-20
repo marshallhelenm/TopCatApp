@@ -4,6 +4,7 @@ class NeighborhoodsController < ApplicationController
 
 
     def index
+        session[:playing] = true
         @neighborhoods = Neighborhood.all
     end
     
