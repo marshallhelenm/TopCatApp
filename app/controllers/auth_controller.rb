@@ -13,7 +13,7 @@ class AuthController < ApplicationController
         # byebug
         @user = User.find_by(username: params[:login][:username])
         if @user && @user.authenticate(password: params[:login][:password])
-            redirect_to 'screens/show'
+            redirect_to 'screens/home'
         else 
             flash[:error_message] = "Please try again!"
             render :login
