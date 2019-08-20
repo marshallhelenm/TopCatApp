@@ -1,0 +1,7 @@
+<h1>Mewtropolis</h1>
+
+<h2>Neighborhoods:</h2>
+<% @neighborhoods.each do |n| %>
+    <h3><%= button_to n.name, neighborhood_path(n), :method => :get %></h3>
+    <p><%= n.description %></p>
+<% end %>
