@@ -43,11 +43,6 @@ class UsersController < ApplicationController
 
     private
 
-    def grab_user
-        # byebug
-        User.find(params[:id])
-    end
-
     def user_params
         params.require(:user).permit(:username, :password)
     end

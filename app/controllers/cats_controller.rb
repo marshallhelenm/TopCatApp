@@ -31,7 +31,7 @@ class CatsController < ApplicationController
 
     def destroy
         @cat.destroy
-        redirect_to :new
+        redirect_to new_cat_path
     end
 
     private
