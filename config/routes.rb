@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/home', to: "screens#show"
   delete '/cats', to: "cats#destroy", as: 'delete'
   get '/Play', to: "neighborhoods#index"
+  delete '/login', to: "auth#logout", as: 'logout'
   # get '/new', to: "users#new", as: '/signup'
   resources :families
   resources :cats
