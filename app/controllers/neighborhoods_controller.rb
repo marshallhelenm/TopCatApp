@@ -1,6 +1,6 @@
 class NeighborhoodsController < ApplicationController
     before_action :grab_neighborhood, only: [:show, :edit, :update, :destroy]
-    before_action :set_user
+    before_action :set_user, :redirect_user
 
 
     def index

@@ -1,6 +1,6 @@
 class CatsController < ApplicationController
+    before_action :set_user, :redirect_user
     before_action :grab_cat, only: [:show, :edit, :update, :destroy]
-    before_action :set_user
 
     def index
         @cats = Cat.all
@@ -36,7 +36,9 @@ class CatsController < ApplicationController
     private
 
     def grab_cat
-        Cat.find(params[:cat][:id])
+        byebug
+        set_user.cats.first
+        # Cat.find(params[:cat][:id])
     end
 
     def cat_params

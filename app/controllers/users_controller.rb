@@ -3,7 +3,12 @@ class UsersController < ApplicationController
     
 
     def index
-        @users = User.all
+        # @users = User.all
+        if logged_in?
+            redirect_to '/screens/home'
+        else
+            redirect_user
+        end
     end
     
     def show

@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-
-    helper_method :
+    helper_method :logged_in?, :redirect_user, :set_user
 
     def logged_in?
         !!session[:user_id]
@@ -14,7 +13,7 @@ class ApplicationController < ActionController::Base
     
     def set_user
         if logged_in?
-            @user = User.find(session[:user_id])
+            @user = User.find_by(id: session[:user_id])
         end
     end
 
