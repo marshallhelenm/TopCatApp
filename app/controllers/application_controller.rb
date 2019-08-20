@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :logged_in?, :redirect_user, :set_user, :playing?
+    helper_method :logged_in?, :redirect_user, :set_user, :playing?, :set_cat
 
     def logged_in?
         !!session[:user_id]
@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
         if logged_in?
             @user = User.find_by(id: session[:user_id])
         end
+    end
+
+    def set_cat
+        @cat = @user.cats.first
     end
 
     def playing?
