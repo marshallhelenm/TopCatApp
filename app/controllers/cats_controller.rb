@@ -26,7 +26,7 @@ class CatsController < ApplicationController
 
     def update
         @cat = Cat.update(cat_params)
-        redirect_to cat_path(@cat)
+        redirect_to '/home'
     end
 
     def destroy
