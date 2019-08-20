@@ -3,8 +3,9 @@ class ScreensController < ApplicationController
 
     def show
         session[:playing] = false
+        session[:cat_id] = set_cat.id
         set_user
-        @cat = @user.cats.first
+        set_cat
     end
 
 

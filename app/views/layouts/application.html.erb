@@ -40,7 +40,13 @@
     <a href="/home" class="item">
       <h1>Top Cat PLAYING</h1>
     </a>
-      <div class="item">MY STATS</div>
+      <div class="item">
+      <% byebug %>
+      Lives: <%= @cat.lives %>
+      Hunger: <%= @cat.hunger %>
+      Scraggliness: <%= @cat.scraggliness %>
+      
+      </div>
       <div class="right menu">
         <% if logged_in? %>
         <%= link_to 'Logout', logout_path, {class: 'item', method: :delete} %>
