@@ -5,6 +5,7 @@ class NeighborhoodsController < ApplicationController
 
     def index
         session[:playing] = true
+        session[:cat_id] = set_cat.id
         @neighborhoods = Neighborhood.all
     end
     
