@@ -34,7 +34,7 @@ class EventsController < ApplicationController
     private
 
     def grab_event
-        Event.find(params[:id])
+        @event = Event.find(params[:id])
     end
 
     def event_params

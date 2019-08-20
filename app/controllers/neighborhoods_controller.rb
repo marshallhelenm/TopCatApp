@@ -7,9 +7,14 @@ class NeighborhoodsController < ApplicationController
         session[:playing] = true
         session[:cat_id] = set_cat.id
         @neighborhoods = Neighborhood.all
+        
     end
     
     def show
+        
+        if !!Neighborhood.random_event 
+            redirect_to event_path(@neighborhood.events.sample)
+        end
     end
 
     def new

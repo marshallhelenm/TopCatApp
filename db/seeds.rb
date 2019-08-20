@@ -27,7 +27,12 @@ c1.neighborhoods << n1
 
 e1 = Event.create(title: "A coyote!", description: "What is that doing in this neighborhood???", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: - 1)
 
+e2 = Event.create(title: "Mud puddle...", description: "...Jump in it?", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: - 1)
+
+e3
+
 n1.events << e1
+n1.events << e2
 
 
 n1.families << f1
