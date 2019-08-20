@@ -17,6 +17,7 @@ class CatsController < ApplicationController
         @cat = Cat.new(cat_params)
         @cat.set_stats
         @cat.save
+        @user.cats << @cat
         redirect_to '/home'
     end
 
@@ -36,8 +37,8 @@ class CatsController < ApplicationController
     private
 
     def grab_cat
-        byebug
-        set_user.cats.first
+        # byebug
+        @cat = set_user.cats.first
         # Cat.find(params[:cat][:id])
     end
 
