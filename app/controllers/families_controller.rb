@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
     before_action :grab_family, only: [:show, :edit, :update, :destroy]
-    before_action :set_user
+    before_action :set_user, :set_cat
 
 
     def index
