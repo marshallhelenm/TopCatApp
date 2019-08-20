@@ -1,6 +1,6 @@
 class RelationshipsController < ApplicationController
     before_action :grab_relationship, only: [:show, :edit, :update, :destroy]
-    before_action :set_user, :redirect_user
+    before_action :set_user, :redirect_user, :set_cat
 
 
     def index
