@@ -15,6 +15,8 @@ class NeighborhoodsController < ApplicationController
         if !!Neighborhood.random_event 
             redirect_to event_path(@neighborhood.events.sample)
         end
+        @territory = @cat.enter_neighborhood(@neighborhood) 
+        #returns the relevant @territor
     end
 
     def new

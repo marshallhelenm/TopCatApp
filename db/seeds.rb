@@ -17,13 +17,33 @@ u1 = User.create(username: "testuser", password: "test")
 c1 = Cat.create(name: "Crookshanks", breed: "Orange Tabby", description: "The size of a small lion.", user_id: u1.id)
 c1.set_stats
 
+
+
+
 f1 = Family.create(name: "Johnson", description: "IDK man, they're average.", poshness: "2")
+f2 = Family.create(name: "Franklin", description: "The snootiest family, with the highest grade wet food.", poshness: "3")
+f3 = Family.create(name: "Smith", description: "They aren't fancy, but they sure do love cats.", poshness: "1")
+f4 = Family.create(name: "Schubert", description: "They've got decent stuff.", poshness: "2")
+f5 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
 
 f1.cats << c1
 
 n1 = Neighborhood.create(name: "Ravenna", description: "increasingly swank", danger_rating: 2)
+n2 = Neighborhood.create(name: "Queen Anne", description: "Hippies love cats.", danger_rating: 1)
+n3 = Neighborhood.create(name: "Mercer Island", description: "So Posh", danger_rating: 1)
+n4 = Neighborhood.create(name: "Wrongside", description: "Dirty alleyways abound.", danger_rating: 3)
 
-c1.neighborhoods << n1
+
+c1.neighborhoods << n1 << n2
+
+n1.families << f1 << f2
+n2.families << f5
+n3.families << f4
+n4.families << f3
+
+
+
+
 
 e1 = Event.create(title: "A coyote!", description: "What is that doing in this neighborhood???", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: - 1)
 

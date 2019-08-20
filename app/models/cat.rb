@@ -11,4 +11,17 @@ class Cat < ApplicationRecord
         self.lives = 9
         self.scraggliness = 2
     end
+
+
+    def enter_neighborhood(neighborhood)
+       if !neighborhood.cats.include?(self)
+        neighborhood.cats << self
+       end
+        territory = self.territories.find_by(neighborhood_id: neighborhood.id)
+        territory.cat_status = 1
+        territory
+    end
+
+
+
 end
