@@ -34,7 +34,7 @@ class NeighborhoodsController < ApplicationController
     private
 
     def grab_neighborhood
-        Neighborhood.find(params[:id])
+        @neighborhood = Neighborhood.find(params[:id])
     end
 
     def neighborhood_params

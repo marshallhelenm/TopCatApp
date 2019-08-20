@@ -1,4 +1,4 @@
-class FamiliesController < ApplifamilyionController
+class FamiliesController < ApplicationController
     before_action :grab_family, only: [:show, :edit, :update, :destroy]
     before_action :set_user
 
@@ -34,7 +34,7 @@ class FamiliesController < ApplifamilyionController
     private
 
     def grab_family
-        Family.find(params[:id])
+        @family = Family.find(params[:id])
     end
 
     def family_params
