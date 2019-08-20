@@ -10,6 +10,8 @@ class NeighborhoodsController < ApplicationController
     end
     
     def show
+        @territory = @cat.enter_neighborhood(@neighborhood) 
+        #returns the relevant @territor
     end
 
     def new
