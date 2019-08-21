@@ -77,8 +77,6 @@ c4.neighborhoods << n3
 
 
 
-f1.cats << c1
-
 
 
 c1.neighborhoods << n1 << n2

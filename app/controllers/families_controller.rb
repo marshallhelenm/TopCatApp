@@ -8,12 +8,10 @@ class FamiliesController < ApplicationController
     end
     
     def show
-        if @cat.too_scraggly?
-            redirect_to event_path(@family.posh_events.sample)
-        else
-            @relationship = @cat.visit_family(@family)
-            @cat.eat(@family.poshness)
-        end
+        @relationship = @cat.visit_family(@family)
+        @interaction = @cat.interact_family(@family)
+        @msg = @family.affection_msg(@cat)
+
     end
  
     def new

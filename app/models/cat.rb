@@ -65,10 +65,15 @@ class Cat < ApplicationRecord
     end
 
     def interact_family(family)
-        if self.scraggliness > 4 && family.poshness == 3
-            #trigger a negative family related event
+        if self.too_scraggly?(family)
+            redirect_to event_path(family.posh_events.sample)
+        elsif self.scraggliness > 4
+            self.eat(family.poshness)
+            return "You're pretty messy, so the family doesn't approach you. They do leave you some food, though."
         else
-            self.feed(family.poshness)
+            self.eat(family.poshness)
+            family.give_affection(self)
+            return "You eat up some food and then get in some good purrin and pettin time."
         end
     end
 
@@ -79,6 +84,7 @@ class Cat < ApplicationRecord
             false 
         end 
     end
+
 
 
 end
