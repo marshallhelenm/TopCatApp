@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_234126) do
     t.integer "danger_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "event_cooldown"
+    t.boolean "event_cooldown", default: false
   end
 
   create_table "relationships", force: :cascade do |t|
