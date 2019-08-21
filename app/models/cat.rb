@@ -44,7 +44,7 @@ class Cat < ApplicationRecord
         family.cats << self
        end
         relationship = self.relationships.find_by(family_id: family.id)
-        relationship.cat_status = 1
+        relationship.affection = 1
         relationship
     end
 

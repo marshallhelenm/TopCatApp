@@ -45,9 +45,11 @@ n4.families << f3
 
 
 
-e1 = Event.create(title: "A coyote!", description: "What is that doing in this neighborhood???", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: - 1)
+e1 = Event.create(title: "A coyote!", description: "What is that doing in this neighborhood???", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: + 1)
 
-e2 = Event.create(title: "Mud puddle...", description: "...Jump in it?", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: - 1)
+e2 = Event.create(title: "Mud puddle...", description: "...Jump in it?", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 1)
+
+e3 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: - 1, family_event: true)
 
 
 n1.events << e1

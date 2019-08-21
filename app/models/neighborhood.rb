@@ -23,5 +23,12 @@ class Neighborhood < ApplicationRecord
             "#{territory.cat_name} is Top Cat in #{territory.neighborhood_name}. All the cats wish they had what #{territory.cat_name} has."
         end
     end
+
+
+    def family_events
+        self.events.select do |event|
+            event.family_event == true
+        end
+    end
     
 end
