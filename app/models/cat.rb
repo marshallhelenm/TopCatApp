@@ -24,11 +24,15 @@ class Cat < ApplicationRecord
     end
 
     def clean(wash=0)
-        self.scraggliness += wash
-        if self.scraggliness < 0
+        if (self.scraggliness - wash) > 6
+            self.scraggliness = 6
+        elsif (self.scraggliness - wash) < 0
             self.scraggliness = 0
+        else
+            self.scraggliness -= wash
         end
         self.save
+        self.scraggliness += wash
     end
 
 
