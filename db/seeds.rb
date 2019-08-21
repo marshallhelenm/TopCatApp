@@ -42,9 +42,9 @@ f16 = Family.create(name: "Moonstar", description: "Hippies have the best food."
 
 f1.cats << c1
 
-n1 = Neighborhood.create(name: "Ravenna", description: "increasingly swank", danger_rating: 2)
-n2 = Neighborhood.create(name: "Queen Anne", description: "Hippies love cats.", danger_rating: 1)
-n3 = Neighborhood.create(name: "Mercer Island", description: "So Posh", danger_rating: 1)
+n1 = Neighborhood.create(name: "Graystone Heights", description: "increasingly swank", danger_rating: 2)
+n2 = Neighborhood.create(name: "Brighthope", description: "Hippies love cats.", danger_rating: 1)
+n3 = Neighborhood.create(name: "Uptown", description: "So Posh", danger_rating: 1)
 n4 = Neighborhood.create(name: "Wrongside", description: "Dirty alleyways abound.", danger_rating: 3)
 
 
