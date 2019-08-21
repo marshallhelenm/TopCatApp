@@ -38,7 +38,7 @@ class Cat < ApplicationRecord
     end
 
     
-    
+
     def visit_family(family)
        if !family.cats.include?(self)
         family.cats << self

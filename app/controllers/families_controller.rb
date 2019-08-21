@@ -9,7 +9,8 @@ class FamiliesController < ApplicationController
     
     def show
         if !!Family.random_event
-            redirect_to event_path(@neighborhood.family_events.sample)
+            byebug
+            redirect_to event_path(@family.neighborhood_events.sample)
         end
         @relationship = @cat.visit_family(@family)
     end
