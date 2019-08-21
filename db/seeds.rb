@@ -87,26 +87,26 @@ n1e1 = Event.create(title: "A coyote!", description: "What is that doing in this
 
 n1e2 = Event.create(title: "Mud puddle...", description: "...Jump in it? Hell yeah!", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 1, cred_score: 0)
 
-n1e3 = Event.create(title: "Broken bag of kibble!", description: "Dog food is still food and you're hungry." hazard_rating: 0, lives_score: 0, hunger_score: - 1, scraggliness_score: 0, cred_score: 0)
+n1e3 = Event.create(title: "Broken bag of kibble!", description: "Dog food is still food and you're hungry.", hazard_rating: 0, lives_score: 0, hunger_score: - 1, scraggliness_score: 0, cred_score: 0)
 
-n1c1 = Event.create(title: "Another stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame." hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
+n1c1 = Event.create(title: "Another stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
 
-n1c2 = Event.create(title: "You sneak up on another stray. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this." hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
+n1c2 = Event.create(title: "You sneak up on another stray. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
 
 f1e3 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0 posh_event: true)
 
 
 #n2 events
 
-n2e1 = Event.create(title: "A coyote!", description: "What is that doing in this neighborhood???", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: + 1, cred_score: 0)
+n2e1 = Event.create(title: "You see a tasty looking plant", description: "What is that doing in this neighborhood???", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: + 1, cred_score: 0)
 
 n2e2 = Event.create(title: "Mud puddle...", description: "...Jump in it? Hell yeah!", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 1, cred_score: 0)
 
-n2e3 = Event.create(title: "Broken bag of kibble!", description: "Dog food is still food and you're hungry." hazard_rating: 0, lives_score: 0, hunger_score: - 1, scraggliness_score: 0, cred_score: 0)
+n2e3 = Event.create(title: "Broken bag of kibble!", description: "Dog food is still food and you're hungry.", hazard_rating: 0, lives_score: 0, hunger_score: - 1, scraggliness_score: 0, cred_score: 0)
 
-n2c1 = Event.create(title: "Another stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame." hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
+n2c1 = Event.create(title: "Another stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
 
-n2c2 = Event.create(title: "You sneak up on another stray. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this." hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
+n2c2 = Event.create(title: "You sneak up on another stray. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
 
 
 
