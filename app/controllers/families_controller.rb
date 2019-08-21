@@ -8,6 +8,7 @@ class FamiliesController < ApplicationController
     end
     
     def show
+        @family = @cat.visit_family(self)
     end
 
     def new
