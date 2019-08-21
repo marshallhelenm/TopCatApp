@@ -13,13 +13,16 @@ class NeighborhoodsController < ApplicationController
 
     
     def show
-        
-        if !!Neighborhood.random_event && !@neighborhood.event_cooldown
-            @neighborhood.event_cooldown = true
-            redirect_to event_path(@neighborhood.events.sample)
+        if @neighborhood.event_cooldown == false
+            if Neighborhood.random_event
+                @neighborhood.event_cooldown = true
+                @neighborhood.save
+                redirect_to event_path(@neighborhood.events.sample)
+            end
+
         else
-            @neighborhood.event_cooldown = !@neighborhood.event_cooldown
-            #byebug
+            @neighborhood.event_cooldown = false
+            @neighborhood.save
         end
 
         @territory = @cat.enter_neighborhood(@neighborhood) 
