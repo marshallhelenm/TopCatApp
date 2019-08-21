@@ -42,6 +42,16 @@
             <%= link_to 'Logout', logout_path, {class: 'item', method: :delete} %>
             <% end %>
       </div>
+      <div class="right menu">
+            <% if logged_in? %>
+            <%= link_to 'Groom Yourself', '/groom', {class: 'item', method: :get} %>
+            <% end %>
+      </div>
+      <div class="right menu">
+            <% if logged_in? %>
+            <%= link_to 'Forage for food', '/forage', {class: 'item', method: :get} %>
+            <% end %>
+      </div>
     </div>
 
   <% end %>

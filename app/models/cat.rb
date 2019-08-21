@@ -13,9 +13,12 @@ class Cat < ApplicationRecord
     end
 
     def eat(food=0)
-        self.hunger += food
-        if self.hunger > 9
+        if (self.hunger - food) > 9
             self.hunger = 9
+        elsif (self.hunger - food) < 0
+            self.hunger = 0
+        else
+            self.hunger -= food
         end
         self.save
     end

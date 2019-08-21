@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete '/cats', to: "cats#destroy", as: 'delete'
   get '/Play', to: "neighborhoods#index"
   delete '/login', to: "auth#logout", as: 'logout'
+  get '/groom', to: "grooms#show"
+  get '/forage', to: "forages#show"
 
   resources :families
   resources :cats
