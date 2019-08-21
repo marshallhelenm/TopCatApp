@@ -28,6 +28,17 @@ f2 = Family.create(name: "Franklin", description: "The snootiest family, with th
 f3 = Family.create(name: "Smith", description: "They aren't fancy, but they sure do love cats.", poshness: "1")
 f4 = Family.create(name: "Schubert", description: "They've got decent stuff.", poshness: "2")
 f5 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
+f6 = Family.create(name: "Neville", description: "Hippies have the best food.", poshness: "2")
+f7 = Family.create(name: "Wilcox", description: "Hippies have the best food.", poshness: "2")
+f8 = Family.create(name: "Hodson", description: "Hippies have the best food.", poshness: "2")
+f9 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
+f10 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
+f11 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
+f12 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
+f13 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
+f14 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
+f15 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
+f16 = Family.create(name: "Moonstar", description: "Hippies have the best food.", poshness: "2")
 
 f1.cats << c1
 
