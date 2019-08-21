@@ -72,5 +72,13 @@ class Cat < ApplicationRecord
         end
     end
 
+    def too_scraggly?(family)
+        if family.poshness == 3 && self.scraggliness > 4
+           true
+        else
+            false 
+        end 
+    end
+
 
 end
