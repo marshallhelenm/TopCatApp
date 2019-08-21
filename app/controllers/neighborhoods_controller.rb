@@ -6,11 +6,10 @@ class NeighborhoodsController < ApplicationController
     def index
         session[:playing] = true
         session[:cat_id] = set_cat.id
+        start_day
         @neighborhoods = Neighborhood.all
         
     end
-    
-
     
     def show
         if @neighborhood.event_cooldown == false

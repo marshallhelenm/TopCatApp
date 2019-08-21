@@ -37,7 +37,7 @@ class Cat < ApplicationRecord
 
 
     def close_call(lives=0)
-        self.lives -= lives
+        self.lives += lives
         self.save
         if lives < 1
            "you died! game over! yikes!"
