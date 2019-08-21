@@ -29,9 +29,9 @@ class Family < ApplicationRecord
         rel = self.relationships.find_by(cat_id: cat.id)
     end
 
-    def give_affection(cat)
-        rel = find_relationship(cat)
-        rel.affection = rel.affection.to_i + 5
+    def give_affection(cat, a_score)
+        rel = self.find_relationship(cat)
+        rel.affection = rel.affection.to_i + a_score
     end
 
     def affection_level(cat)

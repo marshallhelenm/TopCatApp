@@ -56,12 +56,13 @@ class Cat < ApplicationRecord
     
 
     def visit_family(family)
-       if !family.cats.include?(self)
-        family.cats << self
+       if !self.families.include?(family)
+        rel = Relationship.new(cat_id: self.id, family_id: family.id, affection: 1)
+        rel.save
+       else
+        rel = family.find_relationship(self)
+        rel
        end
-        relationship = self.relationships.find_by(family_id: family.id)
-        relationship.affection = 1
-        relationship
     end
 
     def interact_family(family)
@@ -69,10 +70,12 @@ class Cat < ApplicationRecord
             redirect_to event_path(family.posh_events.sample)
         elsif self.scraggliness > 4
             self.eat(family.poshness)
+            family.give_affection(self, 1)
+
             return "You're pretty messy, so the family doesn't approach you. They do leave you some food, though."
         else
             self.eat(family.poshness)
-            family.give_affection(self)
+            family.give_affection(self, 5)
             return "You eat up some food and then get in some good purrin and pettin time."
         end
     end
