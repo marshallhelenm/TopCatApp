@@ -8,12 +8,12 @@ class FamiliesController < ApplicationController
     end
     
     def show
-        if !!Family.random_event
-            byebug
-            redirect_to event_path(@family.neighborhood_events.sample)
+        if @cat.too_scraggly?
+            redirect_to event_path(@family.posh_events.sample)
+        else
+            @relationship = @cat.visit_family(@family)
+            @cat.eat(@family.poshness)
         end
-        @relationship = @cat.visit_family(@family)
-        @cat.eat(@family.poshness)
     end
  
     def new

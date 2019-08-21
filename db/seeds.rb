@@ -93,7 +93,7 @@ n1c1 = Event.create(title: "Another stray cat catches you unawares!", descriptio
 
 n1c2 = Event.create(title: "You sneak up on another stray. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this." hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
 
-f1e3 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0 family_event: true)
+f1e3 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0 posh_event: true)
 
 
 #n2 events

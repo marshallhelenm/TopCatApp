@@ -25,9 +25,15 @@ class Neighborhood < ApplicationRecord
     end
 
 
-    def family_events
+    def posh_events
         self.events.select do |event|
-            event.family_event == true
+            event.posh_event == true
+        end
+    end
+
+    def other_events
+        self.events.select do |event|
+            event.posh_event == false
         end
     end
     
