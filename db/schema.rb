@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_234126) do
+ActiveRecord::Schema.define(version: 2019_08_21_180157) do
 
   create_table "cats", force: :cascade do |t|
     t.string "name"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2019_08_20_234126) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.boolean "family_event"
     t.integer "hazard_rating"
     t.integer "neighborhood_id"
     t.integer "scraggliness_score"
@@ -36,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_234126) do
     t.integer "lives_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cred_score"
   end
 
   create_table "families", force: :cascade do |t|
