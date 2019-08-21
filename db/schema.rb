@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_08_21_180157) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.boolean "posh_event"
     t.integer "hazard_rating"
     t.integer "neighborhood_id"
     t.integer "scraggliness_score"

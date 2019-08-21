@@ -14,6 +14,8 @@ User.destroy_all
 
 u1 = User.create(username: "testuser", password: "test")
 u2 = User.create(username: "bob", password: "bob")
+u3 = User.create(username: "cob", password: "cob")
+u4 = User.create(username: "dob", password: "dob")
 
 c1 = Cat.create(name: "Crookshanks", breed: "Orange Tabby", description: "The size of a small lion.", user_id: u1.id)
 c1.set_stats
@@ -93,7 +95,7 @@ n1c1 = Event.create(title: "Another stray cat catches you unawares!", descriptio
 
 n1c2 = Event.create(title: "You sneak up on another stray. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
 
-f1e3 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0 posh_event: true)
+f1e3 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0, posh_event: true)
 
 
 #n2 events
@@ -119,9 +121,9 @@ n2c2 = Event.create(title: "You sneak up on another stray. Show them who's Top C
 
 
 n1.events << n1e1 << n1e2 << n1e3 << n1c1 << n1c2
-n1.events << e2
-n2.events << e1
-n3.events << e1
-n4.events << e1
+# n1.events << e2
+# n2.events << e1
+# n3.events << e1
+# n4.events << e1
 
 n1.families << f1
