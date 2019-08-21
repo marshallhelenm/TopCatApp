@@ -52,7 +52,7 @@ e2 = Event.create(title: "Mud puddle...", description: "...Jump in it?", hazard_
 e3 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: - 1, family_event: true)
 
 
-n1.events << e1
+n1.events << e1 << e3
 n1.events << e2
 
 

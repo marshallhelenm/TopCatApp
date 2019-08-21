@@ -25,4 +25,8 @@ class Family < ApplicationRecord
     #     end
 
     # end
+
+    def neighborhood_events
+        self.neighborhood.family_events
+    end
 end

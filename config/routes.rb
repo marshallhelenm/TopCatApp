@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  root "screens#index"
   get '/login', to: "auth#login"
   post '/login', to: "auth#verify"
   get '/home', to: "screens#show"
   delete '/cats', to: "cats#destroy", as: 'delete'
   get '/Play', to: "neighborhoods#index"
   delete '/login', to: "auth#logout", as: 'logout'
-  # root "auth#login"
 
   resources :families
   resources :cats
