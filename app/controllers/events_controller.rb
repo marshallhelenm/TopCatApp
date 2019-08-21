@@ -8,6 +8,7 @@ class EventsController < ApplicationController
     end
     
     def show
+        @cat.update_stats(@event.hunger_score, @event.scraggliness_score, @event.lives_score)
     end
 
     def new

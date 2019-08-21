@@ -5,26 +5,42 @@ class Cat < ApplicationRecord
     has_many :neighborhoods, through: :territories
     belongs_to :user
 
-
     def set_stats
         self.hunger = 2
         self.lives = 9
         self.scraggliness = 2
+        self.save
     end
 
-    def eat(food)
+    def eat(food=0)
         self.hunger += food
+        if self.hunger > 9
+            self.hunger = 9
+        end
         self.save
     end
 
-    def clean(wash)
+    def clean(wash=0)
         self.scraggliness += wash
+        if self.scraggliness < 0
+            self.scraggliness = 0
+        end
         self.save
     end
 
-    def close_call
-        self.lives -= 1
+
+    def close_call(lives=0)
+        self.lives -= lives
         self.save
+        if lives < 1
+           "you died! game over! yikes!"
+        end
+    end
+
+    def update_stats(food=0, wash=0, lives=0)
+        self.eat(food)
+        self.clean(wash)
+        self.close_call(lives)
     end
 
 

@@ -13,6 +13,7 @@ class FamiliesController < ApplicationController
             redirect_to event_path(@family.neighborhood_events.sample)
         end
         @relationship = @cat.visit_family(@family)
+        @cat.eat(@family.poshness)
     end
  
     def new
