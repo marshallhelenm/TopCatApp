@@ -89,39 +89,53 @@ n1e2 = Event.create(title: "Mud puddle...", description: "...Jump in it? Hell ye
 
 n1e3 = Event.create(title: "Broken bag of kibble!", description: "Dog food is still food and you're hungry.", hazard_rating: 0, lives_score: 0, hunger_score: - 1, scraggliness_score: 0, cred_score: 0)
 
-n1c1 = Event.create(title: "Another stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
+n1c1 = Event.create(title: "A bright orange stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
 
-n1c2 = Event.create(title: "You sneak up on another stray. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
+n1c2 = Event.create(title: "You sneak up on a bright orange stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
 
 f1e3 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0, posh_event: true)
 
-
 #n2 events
 
-n2e1 = Event.create(title: "A coyote!", description: "What is that doing in this neighborhood???", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: + 1, cred_score: 0)
+n2e1 = Event.create(title: "You see a tasty looking plant", description: "You take a bite and start to feel woozy", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: 0, cred_score: 0)
 
-n2e2 = Event.create(title: "Mud puddle...", description: "...Jump in it? Hell yeah!", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 1, cred_score: 0)
+n2e2 = Event.create(title: "An excited toddler approaches you.", description: "They pet you with sticky hands. Gross...", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 1, cred_score: 0)
 
-n2e3 = Event.create(title: "Broken bag of kibble!", description: "Dog food is still food and you're hungry.", hazard_rating: 0, lives_score: 0, hunger_score: - 1, scraggliness_score: 0, cred_score: 0)
+n2e3 = Event.create(title: "You find an open composting bin!", description: "Free fish head! Tasty.", hazard_rating: 0, lives_score: 0, hunger_score: - 1, scraggliness_score: 0, cred_score: 0)
 
-n2c1 = Event.create(title: "Another stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
+n2c1 = Event.create(title: "A fat, odd smelling stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
 
-n2c2 = Event.create(title: "You sneak up on another stray. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
-
-
-
+n2c2 = Event.create(title: "You sneak up on a fat, odd smelling stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
 
 #n3 events
 
+n3e1 = Event.create(title: "Oncoming car!", description: "The car squashes your tail as it swerves to miss you. Ouch!", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: 0, cred_score: 0)
 
+n3e2 = Event.create(title: "Moving along the rooftops, you slip!", description: "You land in an open dumpster. You're safe, but what is that horrible smell?", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 1, cred_score: 0)
+
+n3e3 = Event.create(title: "You pass a friendly old woman in the park", description: "She offers you a portion of her lunch. What luck!", hazard_rating: 0, lives_score: 0, hunger_score: - 1, scraggliness_score: 0, cred_score: 0)
+
+n3c1 = Event.create(title: "A prissy stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
+
+n3c2 = Event.create(title: "You sneak up on a prissy stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
 
 #n4 events
 
+n4e1 = Event.create(title: "You encounter a neighborhood dog. It growls menacingly!", description: "You run for your life, but it bites you!", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: - 1, cred_score: 0)
+
+n4e2 = Event.create(title: "A group of children throw garbage at you!", description: "What is wrong with this neighborhood??", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 1, cred_score: 0)
+
+n4e3 = Event.create(title: "You find a mouse and begin to chase it!", description: "A well earned lunch. Nature can be cruel, but everyone has to eat.", hazard_rating: 0, lives_score: 0, hunger_score: - 1, scraggliness_score: 0, cred_score: 0)
+
+n4c1 = Event.create(title: "A filthy stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1)
+
+n4c2 = Event.create(title: "You sneak up on a filthy stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1)
+
 
 n1.events << n1e1 << n1e2 << n1e3 << n1c1 << n1c2
-# n1.events << e2
-# n2.events << e1
-# n3.events << e1
-# n4.events << e1
+n2.events << n2e1 << n2e2 << n2e3 << n2c1 << n2c2
+n3.events << n3e1 << n3e2 << n3e3 << n3c1 << n3c2
+n4.events << n4e1 << n4e2 << n4e3 << n4c1 << n4c2
+
 
 n1.families << f1
