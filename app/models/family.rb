@@ -12,17 +12,17 @@ class Family < ApplicationRecord
         end
     end
 
-    def affection(relationship)
-        byebug
-        if #relationship is low
-            #low relationship message
-        elsif #relationship is medium
-            #med msg
-        elsif #relationship is high
-            #high msg
-        else # relationship is extra high
-            #This family friggin loves you!
-        end
+    # def affection(relationship)
+    #     byebug
+    #     if #relationship is low
+    #         #low relationship message
+    #     elsif #relationship is medium
+    #         #med msg
+    #     elsif #relationship is high
+    #         #high msg
+    #     else # relationship is extra high
+    #         #This family friggin loves you!
+    #     end
 
-    end
+    # end
 end

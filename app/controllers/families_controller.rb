@@ -8,9 +8,12 @@ class FamiliesController < ApplicationController
     end
     
     def show
-        @family = @cat.visit_family(self)
+        if !!Family.random_event
+            redirect_to event_path(@neighborhood.family_events.sample)
+        end
+        @relationship = @cat.visit_family(@family)
     end
-
+ 
     def new
         @family = Family.new
     end
