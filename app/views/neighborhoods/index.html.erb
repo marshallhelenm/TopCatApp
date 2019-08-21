@@ -1,7 +1,14 @@
-<h1>Mewtropolis</h1>
+<div id="garden">
+<div>
+<h1 id="heading">Mewtropolis</h1>
 
 <h2>Neighborhoods:</h2>
+<%i = 1%>
 <% @neighborhoods.each do |n| %>
+    <div class="neighborhood-#{i}">
     <h3><%= button_to n.name, neighborhood_path(n), :method => :get %></h3>
     <p><%= n.description %></p>
+    </div>
 <% end %>
+</div>
+</div>

@@ -17,7 +17,6 @@ class NeighborhoodsController < ApplicationController
             if Neighborhood.random_event
                 @neighborhood.event_cooldown = true
                 @neighborhood.save
-                byebug
                 redirect_to event_path(@neighborhood.other_events.sample)
             end
 

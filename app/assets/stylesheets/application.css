@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+ #garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    height: 1000;
+ }
+
+ #heading {
+    color: blue;
+    
+ }
+
+ #neighborhood-1 {
+     grid-column-start: 4;
+     grid-row-start: 4;
+     /* some place on the grid */
+ }
+
+ #neighborhood-2 {
+    /* some place on the grid */
+}
