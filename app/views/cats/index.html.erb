@@ -1,6 +1,43 @@
 <h1>High Scores</h1>
-<h3>Who is the Top Cat?</h3>
+<h2><%= @top.name %> is Top Cat! </h2>
 
-<% @cats.each do |cat| %>
-    <h3><%= cat.name %></h3>
-<% end %>
+
+
+<h4>Average Affection per Cat: <%= @avg_affection %></h4>
+
+<h4>Highest affection overall:</h4>
+
+<p>
+    <% @high.each do |cat| %>
+    User: <%= cat.username %><br>
+    Cat: <%= cat.name %><br>
+    Total Affection Score: <%= cat.total_affection %><br>
+    <br>
+    <% end %>
+
+</p>
+
+<h4>Best Relationships:</h4>
+
+<p>
+    <% @best.each do |rel| %>
+    User: <%= rel.username %><br>
+    Cat: <%= rel.cat_name %><br>
+    Family: <%= rel.family_name%><br>
+    Affection: <%= rel.affection %><br>
+    <br>
+    <% end %>
+
+</p>
+
+<h4>Most generous families:</h4>
+
+<p>
+    <% @friendliest.each do |fam| %>
+    Family: <%= fam.name %> <br>
+    Favorite Cat: <%= fam.favorite_cat %> <br>
+    <br>
+    <% end %>
+
+</p>
+

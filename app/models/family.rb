@@ -53,9 +53,33 @@ class Family < ApplicationRecord
 
     ##analytics##
 
-    def Family.feeds_most
-        Family.all.max_by{ |fam| fam.relationships.count }
+    def relationship_count
+        self.relationships.count
+    end
+
+    
+    
+    def total_affection #totals up all the affection scores for one cat
+        total = 0
+        self.relationships.each do |rel|
+            total += rel.affection
+        end
+        total
     end
     
+    def Family.friendliest #returns top 5 families by how much affection they have with cats
+        fam = Family.all.sort_by{ |fam| fam.total_affection }
+        fam = fam.reverse
+        fam = fam[0..4]
+    end
+
+    def favorite_cat
+        rel = self.relationships.max_by{ |rel| rel.affection }
+        if rel == nil
+            return "This family doesn't know any cats yet!"
+        else
+            rel.cat.name
+        end
+    end
 
 end

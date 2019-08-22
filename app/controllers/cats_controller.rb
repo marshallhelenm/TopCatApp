@@ -4,6 +4,11 @@ class CatsController < ApplicationController
 
     def index
         @cats = Cat.all
+        @high = Cat.most_affection
+        @best = Relationship.best
+        @friendliest = Family.friendliest
+        @avg_affection = Cat.avg_affection
+        @top = @high.first
     end
     
     def show
