@@ -81,4 +81,20 @@ class Cat < ApplicationRecord
 
 
 
+    ####analytics####
+
+    def total_affection #totals up all the affection scores for one cat
+        total = 0
+        self.relationships.each do |rel|
+            total += rel.affection
+        end
+    end
+
+    def Cat.most_affection #finds the cat with the highest total affection score
+        Cat.all.max_by( |cat| cat.total_affection )
+    end
+
+
+
+
 end
