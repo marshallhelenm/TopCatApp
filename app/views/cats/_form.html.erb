@@ -12,10 +12,8 @@
 
 <h3></h3>
     <%= c.label :img_url %><br>
-    <%= c.select :img_url %><br>
-
-    select_tag "city", options_for_select([['New York' ,'New york'], ['Los Angeles', 'Los Angeles']])
-
+    <%= c.text_field :img_url %><br>
+<%# somehow do a drop down for cat image options %>
     <%= c.label :name %><br>
     <%= c.text_field :name %><br>
     
