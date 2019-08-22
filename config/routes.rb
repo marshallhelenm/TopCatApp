@@ -20,8 +20,10 @@ Rails.application.routes.draw do
   get 'exit_neighborhood', to: "screens#index"
   get '/groom', to: "grooms#show"
   get '/forage', to: "forages#show"
+
   get '/end_day', to: "days#index"
   get '/new_day', to: "days#show"
+
 
   resources :families
   resources :cats

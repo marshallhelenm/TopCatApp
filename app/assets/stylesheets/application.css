@@ -17,21 +17,47 @@
  #garden {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
-    height: 1000;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    height: 600px;
+    margin: 15px;
  }
 
  #heading {
     color: blue;
-    
+    text-align: center;
+    grid-column-start: 3;
  }
 
- #neighborhood-1 {
-     grid-column-start: 4;
+ #sub_heading{
+    grid-column-start: 3;
+    grid-row-start: 2;
+    text-align: center;
+ }
+
+ #garden > #neighborhood {
+     color: blueviolet;
+     grid-column-start: 1;
      grid-row-start: 4;
-     /* some place on the grid */
+     text-align: center;
+
  }
 
  #neighborhood-2 {
-    /* some place on the grid */
+     grid-column-start: 5;
+     grid-row-start: 4;
+     text-align: center;
+
+}
+
+#neighborhood-3 {
+    grid-column-start: 1;
+    grid-row-start: 8;
+    text-align: center;
+}
+
+#neighborhood-4 {
+    grid-column-start: 5;
+    grid-row-start: 8;
+    text-align: center;
+
 }
