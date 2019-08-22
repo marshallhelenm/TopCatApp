@@ -1,10 +1,11 @@
-<div id="garden">
+<div id="garden-3">
 
 <% if @cat.img_url %>
 <div id="catpic">
 <img src=<%=@cat.img_url%> id="catpic" alt='A picture of the user's cat'>
 </div>
 <% end %>
+
 
 <div id="new_form">
 <%= form_for @cat do |c| %>

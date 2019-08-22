@@ -30,6 +30,14 @@
     margin: 15px;
  }
 
+ #garden-3 {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 20% 10% 10% 10% 10%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    height: 600px;
+    margin: 15px;
+ }
+
  #heading {
     color: blue;
     text-align: center;
@@ -116,25 +124,28 @@
 }
 
 #new_form {
-    grid-column-start: 3;
+    grid-column-start: 5;
     grid-row-start: 7;
     text-align: center;
 }
 
 #title{
-    grid-column-start: 3;
+    grid-column-start: 5;
     text-align: center;
 }
 
 #catpic{
-    grid-column-start: 3;
+    grid-column-start: 4;
     grid-row-start: 4;
     text-align: center;
+    height: auto;
+    max-width: 400%;
+    align-self: center;
 }
 
 #flash{
     color: red;
-    grid-column-start: 4;
+    grid-column-start: 7;
     grid-row-start: 7;
     text-align: center;
 }
