@@ -146,6 +146,16 @@
     align-self: center;
     margin: 0 auto;
 }
+  
+#mycat{
+    grid-column-start: 0;
+    grid-row-start: 4;
+    text-align: center;
+    height: auto;
+    max-width: 100%;
+    align-self: center;
+    margin: 0 auto;
+}
 
 #flash{
     color: red;
@@ -156,14 +166,22 @@
 
 #left_menu{
     grid-column-start: 1;
-    grid-row-start: 5;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
 }
 
 #right_menu{
     grid-column-start: 3;
-    grid-row-start: 5;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
 }
 
 #play_button{
