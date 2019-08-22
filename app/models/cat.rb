@@ -110,5 +110,29 @@ class Cat < ApplicationRecord
         avg
     end
 
+    def avg_affection
+        total = 0
+        self.relationships.each do |rel|
+            total += rel.affection
+        end
+        if self.relationships.count != 0
+            avg = total / self.relationships.count
+        else
+            avg = 0
+        end
+        avg
+    end
+
+    def favorite_family
+        rel = self.relationships.max_by{ |rel| rel.affection }
+        if rel == nil
+            return "No One! This cat doesn't know any families yet"
+        else
+            rel.family.name
+        end
+    end
+
+
+
 
 end

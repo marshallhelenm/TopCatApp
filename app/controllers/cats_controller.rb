@@ -11,7 +11,8 @@ class CatsController < ApplicationController
         @top = @high.first
     end
     
-    def show
+    def show #your cat's stats
+        
     end
 
     def new
