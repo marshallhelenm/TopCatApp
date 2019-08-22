@@ -15,26 +15,26 @@ class FamiliesController < ApplicationController
         take_action
     end
  
-    def new
-        @family = Family.new
-    end
+    # def new
+    #     @family = Family.new
+    # end
 
-    def create
-        @family = Family.new(family_params)
-        @family.save
-    end
+    # def create
+    #     @family = Family.new(family_params)
+    #     @family.save
+    # end
 
-    def edit
-    end
+    # def edit
+    # end
 
-    def update
-        @family = Family.update(family_params)
-        redirect_to family_path(@family)
-    end
+    # def update
+    #     @family = Family.update(family_params)
+    #     redirect_to family_path(@family)
+    # end
 
-    def destroy
-        @family.destroy
-    end
+    # def destroy
+    #     @family.destroy
+    # end
 
     private
 

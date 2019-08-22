@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/login', to: "auth#login"
   post '/login', to: "auth#verify"
   get '/home', to: "screens#show"
+  get 'exit_neighborhood', to: "screens#index"
   delete '/cats', to: "cats#destroy", as: 'delete'
   get '/Play', to: "days#show"
   delete '/login', to: "auth#logout", as: 'logout'
