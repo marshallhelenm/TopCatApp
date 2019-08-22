@@ -52,12 +52,12 @@ class FamiliesController < ApplicationController
             redirect_to event_path(@family.posh_events.sample)
         elsif @cat.scraggliness > 4
             @cat.eat(@family.poshness)
-            family.give_affection(@cat, 1)
+            @family.give_affection(@cat, 1)
 
             return "You're pretty messy, so the family doesn't approach you. They do leave you some food, though."
         else
             @cat.eat(@family.poshness)
-            family.give_affection(@cat, 5)
+            @family.give_affection(@cat, 5)
             return "You eat up some food and then get in some good purrin and pettin time."
         end
     end

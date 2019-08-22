@@ -1,3 +1,5 @@
+<%# this is the home screen %>
+
 <div>
     <%# @cat.img_url inside an image tag %>
     <%# @cat.name %>
@@ -15,10 +17,11 @@
 </div>
 
 <div>
-    <%= button_to 'High Scores', '/cats/high_scores' %><br>
+    <%= button_to 'High Scores', '/high_scores', :method => :get %><br>
 
-    <%= button_to 'My Stats', '/cats/stats' %><br>
+    <%= button_to 'My Stats', '/cat_stats', :method => :get %><br>
 
-    <%= button_to 'Rules', '/application/rules' %><br>
+    <%= button_to 'Rules', '/rules', :method => :get %><br>
 
+    <%= button_to 'My Account', '/account', :method => :get %><br>
 </div>

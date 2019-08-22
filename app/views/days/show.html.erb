@@ -8,7 +8,7 @@ Your currents stats are:
 if starving, you lost a life message
 
 <% if session[:neighborhood] %>
-    <h3><%= button_to "Begin", neighborhood_path(session[:neighborhood]["3"]), :method => :get %></h3>
+    <h3><%= button_to "Begin", neighborhood_path(session[:neighborhood]["id"]), :method => :get %></h3>
 <% else %>
     <h3><%= button_to "Begin", '/neighborhoods', :method => :get %></h3>
 <% end %>
