@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+/* neighborhood grid */
  #garden {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
@@ -21,7 +21,7 @@
     height: 600px;
     margin: 15px;
  }
-
+/* home screen */
  #garden-2 {
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -29,7 +29,7 @@
     height: 600px;
     margin: 15px;
  }
-
+/* title / login/ signup */
  #garden-3 {
     display: grid;
     grid-template-columns: 10% 10% 10% 10% 20% 10% 10% 10% 10%;
@@ -127,9 +127,6 @@
     grid-column-start: 5;
     grid-row-start: 7;
     text-align: center;
-
-    
-
 }
 
 #title{
@@ -182,11 +179,25 @@
     align-items: center;
     
 
-}
+}   
 
-#play_button{
+div.play_button input {
+    background:url("https://cdn.pixabay.com/photo/2016/04/07/18/57/silhouette-1314467_1280.png") no-repeat;
+    cursor: pointer;
+    width: auto;
+    height: 20%;
+    padding: 100px;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
     grid-column-start: 2;
     grid-row-start: 6;
+}
+
+.play_button{
+    grid-column-start: 2;
+    grid-row-start: 4;
     text-align: center;
 }
 
