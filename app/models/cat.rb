@@ -88,13 +88,27 @@ class Cat < ApplicationRecord
         self.relationships.each do |rel|
             total += rel.affection
         end
+        total
     end
 
-    def Cat.most_affection #finds the cat with the highest total affection score
-        Cat.all.max_by( |cat| cat.total_affection )
+    def Cat.most_affection #returns top 5 cats by their total affection scores
+        cats = Cat.all.sort_by{ |cat| cat.total_affection }
+        cats = cats.reverse
+        cats = cats[0..4]
     end
 
+    def username
+        self.user.username
+    end
 
+    def Cat.avg_affection
+        total = 0
+        Cat.all.each do |cat|
+            total += cat.total_affection
+        end
+        avg = total / Cat.all.count
+        avg
+    end
 
 
 end
