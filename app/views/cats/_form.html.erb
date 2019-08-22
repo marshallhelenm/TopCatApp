@@ -1,10 +1,19 @@
 <div id="garden">
 
+<% if @cat.img_url %>
 <div id="catpic">
-Cat pic?
+<img src=<%=@cat.img_url%> id="catpic" alt='A picture of the user's cat'>
 </div>
+<% end %>
+
 <div id="new_form">
 <%= form_for @cat do |c| %>
+
+<h3></h3>
+    <%= c.label :img_url %><br>
+    <%= c.select :img_url %><br>
+
+    select_tag "city", options_for_select([['New York' ,'New york'], ['Los Angeles', 'Los Angeles']])
 
     <%= c.label :name %><br>
     <%= c.text_field :name %><br>
