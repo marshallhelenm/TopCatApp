@@ -54,11 +54,11 @@ class FamiliesController < ApplicationController
             @cat.eat(@family.poshness)
             @family.give_affection(@cat, 1)
 
-            return "You're pretty messy, so the family doesn't approach you. They do leave you some food, though."
+            return "You're pretty messy, so the family doesn't approach you. They do leave you some food, though. Hunger - #{@family.poshness} Affection + 1"
         else
             @cat.eat(@family.poshness)
             @family.give_affection(@cat, 5)
-            return "You eat up some food and then get in some good purrin and pettin time."
+            return "You eat up some food and then get in some good purrin and pettin time. Hunger - #{@family.poshness} Affection + 5"
         end
     end
 

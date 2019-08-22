@@ -1,5 +1,14 @@
 <h1><%= @event.title %></h1><br>
 <h2><%= @event.description %></h2><br>
 
+<h4>Stat Effects:</h4>
+<p>
+    Hunger: <%= @event.hunger_score %><br>
+    Scraggliness: <%= @event.scraggliness_score %><br>
+    Lives: <%= @event.lives_score %><br>
+    Neighborhood Cred: <%= @event.cred_score %><br>
+
+</p>
+
 <h3><%= button_to "Return to Neighborhood", neighborhood_path(@event.neighborhood), :method => :get %></h3>
 

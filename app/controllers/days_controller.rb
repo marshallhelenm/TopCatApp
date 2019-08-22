@@ -8,8 +8,8 @@ class DaysController < ApplicationController
         start_day
         session[:playing] = true
         session[:cat_id] = set_cat.id
-        starving = night_hunger
-        @cat.close_call(-1) if starving
+        @starving = night_hunger
+        @cat.close_call(-1) if @starving
     end
 
     private

@@ -1,11 +1,15 @@
-Welcome to a bright new day in Meowtropolis!
+<h1>Welcome to a bright new day in Meowtropolis!</h1>
 
-Time to get out there and win some food and love.
+<h2>Time to get out there and win some food and love.</h2>
 
-Your currents stats are:
---your stats--
+<% if @starving %>
+    <p>
+    Uh oh! looks like you ended the day starving yesterday. You've lost one life. Best get plenty of food today!
+    </p>
+<% end %>
 
-if starving, you lost a life message
+<%= render "current_stats" %>
+
 
 <% if session[:neighborhood] %>
     <h3><%= button_to "Begin", neighborhood_path(session[:neighborhood]["id"]), :method => :get %></h3>

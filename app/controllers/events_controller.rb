@@ -9,6 +9,8 @@ class EventsController < ApplicationController
     
     def show
         @cat.update_stats(@event.hunger_score, @event.scraggliness_score, @event.lives_score)
+        set_territory
+        @territory.change_cred(@event.cred_score)
     end
 
     # def new
@@ -40,5 +42,9 @@ class EventsController < ApplicationController
 
     def event_params
         params.require(:event).permit(:title, :description, :hazard_rating, :neighborhood_id, :scraggliness_score, :hunger_score, :lives_score)
+    end
+
+    def set_territory
+        @territory = @cat.territories.find_by(neighborhood_id: session[:neighborhood]["id"])
     end
 end
