@@ -2,13 +2,13 @@
 
 
 <div id="left_menu">
-    cat picture? <br>
+    <img src=<%=@mypic%> id="mycat" alt='A picture of the user's cat'>
     <%= @cat.name %><br><br>
     <%= button_to 'Edit Your Cat', edit_cat_path(@cat), :method => :get, class: "genericButton" %><br>
     <%= button_to 'Delete Your Cat', cats_path, :action => :destroy, :method => :delete, data: {confirm: 'Are you sure you want to delete this cat? This action cannot be undone.'}, class: "warningButton" %>
 
 </div>
-
+  
 
 
 <div class="play_button">
