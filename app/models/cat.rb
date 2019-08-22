@@ -91,7 +91,7 @@ class Cat < ApplicationRecord
     end
 
     def Cat.most_affection #finds the cat with the highest total affection score
-        Cat.all.max_by( |cat| cat.total_affection )
+        Cat.all.max_by{ |cat| cat.total_affection }
     end
 
 

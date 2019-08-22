@@ -1,12 +1,18 @@
-<h1><%= @neighborhood.name %></h1>
-<p><%= @neighborhood.description %></p>
-<h4><%= @neighborhood.cred(@territory) %></h4>
+<div id="garden-2">
 
-<h2>Families:</h2>
+<h1 id="heading-2"><%= @neighborhood.name %></h1>
+<p id="sub_heading-2"><%= @neighborhood.description %></p>
+<h4 id="cred"><%= @neighborhood.cred(@territory) %></h4>
+
+<% @count = 1 %>
 <% @neighborhood.families.each do |fam| %>
+    <div id="family-<%=@count%>">
     <h3><%= button_to fam.name, family_path(fam), :method => :get %></h3>
     <p><%= fam.description %></p>
+    </div>
+    <% @count += 1 %>
 <% end %>
 
-<h3><%= button_to "Travel to Another Neighborhood (Picture of paw prints?)", '/exit_neighborhood', :method => :get %></h3>
+<h3 id="travel_button"><%= button_to "(Picture of paw prints?)", '/exit_neighborhood', :method => :get %></h3>
+</div>
     

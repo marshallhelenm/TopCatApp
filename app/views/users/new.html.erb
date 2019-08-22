@@ -1,4 +1,6 @@
-<img src="" alt="A picture of a happy cat">
+<div id="garden">
+
+<img src="" id="catpic" alt="A picture of a happy cat">
 <h1>Top Cat</h1>
 <% if @user.errors.any? %>
     <% @user.errors.full_messages.each do |msg| %>
@@ -18,3 +20,5 @@
     
     <%= f.submit 'Sign Up'%>
 <% end %>
+
+</div>

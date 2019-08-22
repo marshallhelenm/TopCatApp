@@ -54,7 +54,7 @@ class Family < ApplicationRecord
     ##analytics##
 
     def Family.feeds_most
-        Family.all.max_by( |fam| fam.relationships.count )
+        Family.all.max_by{ |fam| fam.relationships.count }
     end
     
 
