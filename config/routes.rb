@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete '/login', to: "auth#logout", as: 'logout'
   get '/groom', to: "grooms#show"
   get '/forage', to: "forages#show"
-  get '/day', to: "days/show"
+  get '/day', to: "days#show"
 
   resources :families
   resources :cats
