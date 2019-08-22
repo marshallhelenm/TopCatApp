@@ -56,6 +56,11 @@
     grid-column-start: 2;
  }
 
+ #heading-3 {
+    text-align: center;
+    grid-column-start: 2;
+ }
+
  #sub_heading-2{
     grid-column-start: 2;
     grid-row-start: 2;
@@ -162,6 +167,12 @@
     grid-row-start: 5;
     text-align: center;
 }   
+
+#central_button{
+    grid-column-start: 2;
+    grid-row-start: 6;
+    text-align: center;
+}
 
 div.play_button input {
     background:url("https://cdn.pixabay.com/photo/2016/04/07/18/57/silhouette-1314467_1280.png") no-repeat;
