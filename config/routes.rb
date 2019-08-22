@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  root "screens#index"
+  root "screens#show"
   get '/login', to: "auth#login"
   post '/login', to: "auth#verify"
   get '/home', to: "screens#show"
   delete '/cats', to: "cats#destroy", as: 'delete'
-  get '/Play', to: "neighborhoods#index"
+  get '/Play', to: "days#show"
   delete '/login', to: "auth#logout", as: 'logout'
   get '/groom', to: "grooms#show"
   get '/forage', to: "forages#show"
-  get '/day', to: "days/show"
+  get '/end_day', to: "days#index"
+  get '/new_day', to: "days#show"
 
   resources :families
   resources :cats

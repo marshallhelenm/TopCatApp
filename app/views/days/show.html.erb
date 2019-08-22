@@ -1,1 +1,14 @@
-That was a full day! Congrats on toughing it out another day on the mean streets of Meowtropolis. Here's your current stats... Play again? Home Screen?
+Welcome to a bright new day in Meowtropolis!
+
+Time to get out there and win some food and love.
+
+Your currents stats are:
+--your stats--
+
+if starving, you lost a life message
+
+<% if session[:neighborhood] %>
+    <h3><%= button_to "Begin", neighborhood_path(session[:neighborhood]["3"]), :method => :get %></h3>
+<% else %>
+    <h3><%= button_to "Begin", '/neighborhoods', :method => :get %></h3>
+<% end %>

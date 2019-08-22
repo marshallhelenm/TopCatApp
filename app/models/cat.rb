@@ -13,8 +13,8 @@ class Cat < ApplicationRecord
     end
 
     def eat(food=0)
-        if (self.hunger - food) > 9
-            self.hunger = 9
+        if (self.hunger - food) > 6
+            self.hunger = 6
         elsif (self.hunger - food) < 0
             self.hunger = 0
         else
@@ -70,21 +70,6 @@ class Cat < ApplicationRecord
         rel = family.find_relationship(self)
         rel
        end
-    end
-
-    def interact_family(family)
-        if self.too_scraggly?(family)
-            redirect_to event_path(family.posh_events.sample)
-        elsif self.scraggliness > 4
-            self.eat(family.poshness)
-            family.give_affection(self, 1)
-
-            return "You're pretty messy, so the family doesn't approach you. They do leave you some food, though."
-        else
-            self.eat(family.poshness)
-            family.give_affection(self, 5)
-            return "You eat up some food and then get in some good purrin and pettin time."
-        end
     end
 
     def too_scraggly?(family)
