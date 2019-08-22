@@ -1,17 +1,11 @@
 class UsersController < ApplicationController
-    before_action :grab_user, only: [:show, :edit, :update, :destroy]
+    before_action :set_user, only: [:show, :edit, :update, :destroy]
     
 
-    def index
-        # @users = User.all
-        if logged_in?
-            redirect_to '/screens/home'
-        else
-            redirect_user
-        end
+    def index #game rules
     end
     
-    def show
+    def show #account page
         #a page for my account info, which includes an option to edit your account
     end
 

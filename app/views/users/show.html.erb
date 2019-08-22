@@ -1,0 +1,8 @@
+<h1>My Account</h1>
+<h3>Username: <%= @user.username %></h3>
+<h3>My Cats:</h3>
+<ul>
+<% @user.cats.each do |cat| %>
+    <%= cat.name %>
+<% end %>
+</ul>

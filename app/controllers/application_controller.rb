@@ -26,19 +26,17 @@ class ApplicationController < ActionController::Base
     end
 
     def start_day
-        session[:action] = 0
+        session[:actions] = 0
     end
 
     def take_action
-        session[:action] += 1
+        session[:actions] += 1
     end
 
-    def day
-        if session[:action] = 5
-            session[:action] = 0
-            redirect_to '/day'
-        else
-            take_action
+    def new_day?
+        if session[:actions] == 5
+            session[:actions] = 0
+            redirect_to '/end_day'
         end
     end
 

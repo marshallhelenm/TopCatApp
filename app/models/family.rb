@@ -51,6 +51,11 @@ class Family < ApplicationRecord
         self.neighborhood.posh_events
     end
 
+    ##analytics##
+
+    def Family.feeds_most
+        Family.all.max_by( |fam| fam.relationships.count )
+    end
     
 
 end

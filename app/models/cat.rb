@@ -13,8 +13,8 @@ class Cat < ApplicationRecord
     end
 
     def eat(food=0)
-        if (self.hunger - food) > 9
-            self.hunger = 9
+        if (self.hunger - food) > 6
+            self.hunger = 6
         elsif (self.hunger - food) < 0
             self.hunger = 0
         else
@@ -23,16 +23,15 @@ class Cat < ApplicationRecord
         self.save
     end
 
-    def clean(wash=0)
-        if (self.scraggliness - wash) > 6
+    def clean(filth=0)
+        if (self.scraggliness + filth) > 6
             self.scraggliness = 6
-        elsif (self.scraggliness - wash) < 0
+        elsif (self.scraggliness + filth) < 0
             self.scraggliness = 0
         else
-            self.scraggliness -= wash
+            self.scraggliness += filth
         end
         self.save
-        self.scraggliness += wash
     end
 
 
@@ -72,21 +71,6 @@ class Cat < ApplicationRecord
        end
     end
 
-    def interact_family(family)
-        if self.too_scraggly?(family)
-            redirect_to event_path(family.posh_events.sample)
-        elsif self.scraggliness > 4
-            self.eat(family.poshness)
-            family.give_affection(self, 1)
-
-            return "You're pretty messy, so the family doesn't approach you. They do leave you some food, though."
-        else
-            self.eat(family.poshness)
-            family.give_affection(self, 5)
-            return "You eat up some food and then get in some good purrin and pettin time."
-        end
-    end
-
     def too_scraggly?(family)
         if family.poshness == 3 && self.scraggliness > 4
            true
@@ -94,6 +78,22 @@ class Cat < ApplicationRecord
             false 
         end 
     end
+
+
+
+    ####analytics####
+
+    def total_affection #totals up all the affection scores for one cat
+        total = 0
+        self.relationships.each do |rel|
+            total += rel.affection
+        end
+    end
+
+    def Cat.most_affection #finds the cat with the highest total affection score
+        Cat.all.max_by( |cat| cat.total_affection )
+    end
+
 
 
 

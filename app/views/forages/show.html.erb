@@ -4,4 +4,9 @@
 <p>You found a little food! Tough pickings out here, though.</p>
 <% end %>
 
-<h3><%= button_to "Return", '/neighborhoods', :method => :get %></h3>
+
+<% if session[:neighborhood] %>
+    <h3><%= button_to "Return", neighborhood_path(session[:neighborhood]["3"]), :method => :get %></h3>
+<% else %>
+    <h3><%= button_to "Return", '/neighborhoods', :method => :get %></h3>
+<% end %>

@@ -11,26 +11,26 @@ class EventsController < ApplicationController
         @cat.update_stats(@event.hunger_score, @event.scraggliness_score, @event.lives_score)
     end
 
-    def new
-        @event = Event.new
-    end
+    # def new
+    #     @event = Event.new
+    # end
 
-    def create
-        @event = Event.new(event_params)
-        @event.save
-    end
+    # def create
+    #     @event = Event.new(event_params)
+    #     @event.save
+    # end
 
-    def edit
-    end
+    # def edit
+    # end
 
-    def update
-        @event = Event.update(event_params)
-        redirect_to neighborhood_path(@event)
-    end
+    # def update
+    #     @event = Event.update(event_params)
+    #     redirect_to neighborhood_path(@event)
+    # end
 
-    def destroy
-        @event.destroy
-    end
+    # def destroy
+    #     @event.destroy
+    # end
 
     private
 

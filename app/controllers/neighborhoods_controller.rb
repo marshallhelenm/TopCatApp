@@ -1,17 +1,15 @@
 class NeighborhoodsController < ApplicationController
     before_action :grab_neighborhood, only: [:show, :edit, :update, :destroy]
-    before_action :set_user, :redirect_user, :set_cat
+    before_action :set_user, :redirect_user, :set_cat, :new_day?
 
 
     def index
-        session[:playing] = true
-        session[:cat_id] = set_cat.id
-        start_day
+        session[:neighborhood] = nil
         @neighborhoods = Neighborhood.all
-        
     end
     
     def show
+        session[:neighborhood] = @neighborhood
         if @neighborhood.event_cooldown == false
             if Neighborhood.random_event
                 @neighborhood.event_cooldown = true
@@ -25,29 +23,29 @@ class NeighborhoodsController < ApplicationController
         end
 
         @territory = @cat.enter_neighborhood(@neighborhood) 
-        #returns the relevant @territor
+        #returns the relevant @territory
     end
 
-    def new
-        @neighborhood = Neighborhood.new
-    end
+    # def new
+    #     @neighborhood = Neighborhood.new
+    # end
 
-    def create
-        @neighborhood = Neighborhood.new(neighborhood_params)
-        @neighborhood.save
-    end
+    # def create
+    #     @neighborhood = Neighborhood.new(neighborhood_params)
+    #     @neighborhood.save
+    # end
 
-    def edit
-    end
+    # def edit
+    # end
 
-    def update
-        @neighborhood = Neighborhood.update(neighborhood_params)
-        redirect_to neighborhood_path(@neighborhood)
-    end
+    # def update
+    #     @neighborhood = Neighborhood.update(neighborhood_params)
+    #     redirect_to neighborhood_path(@neighborhood)
+    # end
 
-    def destroy
-        @neighborhood.destroy
-    end
+    # def destroy
+    #     @neighborhood.destroy
+    # end
 
     private
 
@@ -58,4 +56,5 @@ class NeighborhoodsController < ApplicationController
     def neighborhood_params
         params.require(:neighborhood).permit(:name, :description, :danger_rating)
     end
+
 end
