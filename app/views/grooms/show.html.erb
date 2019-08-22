@@ -1,7 +1,7 @@
 <h2> You spend some time cleaning your fur and tending to any scrapes. You're looking a little better now! </h2>
 
 <% if session[:neighborhood] %>
-    <h3><%= button_to "Return", neighborhood_path(session[:neighborhood]["3"]), :method => :get %></h3>
+    <h3><%= button_to "Return", neighborhood_path(session[:neighborhood]["3"]), :method => :get, class: "genericButton" %></h3>
 <% else %>
-    <h3><%= button_to "Return", '/neighborhoods', :method => :get %></h3>
+    <h3><%= button_to "Return", '/neighborhoods', :method => :get, class: "genericButton" %></h3>
 <% end %>
