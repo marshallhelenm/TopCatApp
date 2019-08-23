@@ -13,6 +13,8 @@ class FamiliesController < ApplicationController
         @interaction = interact_family
         @msg = @family.affection_msg(@cat)
         take_action
+        session[:petpics] = PETPICS
+        @ppic = random_pet_pics
     end
  
     # def new

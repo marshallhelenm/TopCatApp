@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :logged_in?, :redirect_user, :set_user, :playing?, :set_cat, :day, :menupics, :random_cat_pic
+    helper_method :logged_in?, :redirect_user, :set_user, :playing?, :set_cat, :day, :menupics, :random_cat_pic, :random_pet_pics
 
     def logged_in?
         !!session[:user_id]
@@ -62,6 +62,12 @@ class ApplicationController < ActionController::Base
 
     def random_cat_pic
         CATPICS.values.sample
+    end
+
+    PETPICS = ["https://images2.minutemediacdn.com/image/upload/c_crop,h_359,w_640,x_0,y_61/f_auto,q_auto,w_1100/v1555432243/shape/mentalfloss/catscratch.jpg", "https://kittentoob.com/wp-content/uploads/2017/09/Pet-a-Cat.jpg", "http://cravingcatnip.com/wp-content/uploads/2016/10/happy-cat-getting-petted4.jpg", "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/things_you_learn_from_your_pet_slideshow/photolibrary_rm_photo_of_petting_cat.jpg"]
+
+    def random_pet_pics
+        PETPICS.sample
     end
 
 end
