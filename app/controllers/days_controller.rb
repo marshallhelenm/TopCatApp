@@ -4,6 +4,7 @@ class DaysController < ApplicationController
     def index #displayed when you finish a day '/end_day'
         @cat.days += 1
         @cat.save 
+        session[:playing] = false
     end 
 
     def show #displayed when you start a new day '/new_day'
