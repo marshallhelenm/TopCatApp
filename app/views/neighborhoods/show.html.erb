@@ -4,14 +4,17 @@
 <p id="sub_heading-2"><%= @neighborhood.description %></p>
 <h4 id="cred"><%= @neighborhood.cred(@territory) %></h4>
 
+
 <% @count = 1 %>
 <% @neighborhood.families.each do |fam| %>
     <div id="family-<%=@count%>">
+    <img src="https://www.sccpre.cat/mypng/detail/7-70738_free-simple-house-clip-art-simple-house-clip.png" style='border:1px solid #000000' alt="pic" height=100 width=100>
     <h3><%= button_to fam.name, family_path(fam), :method => :get %></h3>
     <p><%= fam.description %></p>
     </div>
     <% @count += 1 %>
 <% end %>
+
 
 <h3 id="travel_button"><%= button_to "Leave Neighborhood", '/exit_neighborhood', :method => :get %></h3>
 </div>

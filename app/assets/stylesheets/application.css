@@ -105,15 +105,14 @@
 }
 
 #family-1 {
-    background:url();
     grid-column-start: 1;
-    grid-row-start: 5;
+    grid-row-start: 4;
     text-align: center;
 }
 
 #family-2 {
     grid-column-start: 3;
-    grid-row-start: 5;
+    grid-row-start: 4;
     text-align: center;
 }
 
@@ -196,15 +195,30 @@
 
 }
 
+#left_statmenu{
+    grid-column-start: 1;
+    grid-row-start: 4;
+}
+
 #right_menu{
     grid-column-start: 3;
     /* justify-content: flex-end; */
-
 }   
+
+#right_statmenu{
+    grid-column-start: 3;
+    grid-row-start: 4;
+}  
 
 #central_button{
     grid-column-start: 2;
     grid-row-start: 6;
+    text-align: center;
+}
+
+#central_stat{
+    grid-column-start: 2;
+    grid-row-start: 4;
     text-align: center;
 }
 
