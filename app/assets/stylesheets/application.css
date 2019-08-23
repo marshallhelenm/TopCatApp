@@ -175,14 +175,15 @@
     justify-content: center;
     position: relative;
     justify-content: space-between;
-    padding-top: 15%; 
-
+    padding-top: 10%; 
+    padding-right: 5%;
+    padding-left: 5%;
 }
 
 .home_menu{
     text-align: center;
     flex-direction: column;
-    max-width: 20%;
+    width: 20%;
     top: 50%;
     
     

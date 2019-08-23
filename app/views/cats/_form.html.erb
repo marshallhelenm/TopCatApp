@@ -20,7 +20,7 @@
     <%= c.text_field :breed %><br>
     
     <%= c.label :description %><br>
-    <%= c.text_area :description %><br>
+    <%= c.text_area :description, :maxlength => 150 %><br>
 
     <%= c.submit %>
 <% end %>
