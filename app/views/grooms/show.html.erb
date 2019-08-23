@@ -1,7 +1,14 @@
-<h2> You spend some time cleaning your fur and tending to any scrapes. You're looking a little better now! </h2>
+<div id="garden-2">
 
+<h2 id="heading-3"> You spend some time cleaning your fur and tending to any scrapes. You're looking a little better now! </h2>
+
+<img src=<%=@gpic%> id="petpic" alt="grooming"><br><br>
+<br>
+<div id="travel_button">
 <% if session[:neighborhood] %>
-    <h3><%= button_to "Return", neighborhood_path(session[:neighborhood]["id"]), :method => :get, class: "genericButton" %></h3>
+   <br> <h3><%= button_to "Return", neighborhood_path(session[:neighborhood]["id"]), :method => :get, class: "genericButton" %></h3>
 <% else %>
     <h3><%= button_to "Return", '/neighborhoods', :method => :get, class: "genericButton" %></h3>
 <% end %>
+</div>
+</div>

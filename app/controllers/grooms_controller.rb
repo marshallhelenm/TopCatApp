@@ -5,5 +5,6 @@ class GroomsController < ApplicationController
         new_day?
         @cat.clean(-2)
         take_action
+        @gpic = random_groom_pics
     end
 end

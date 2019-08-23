@@ -1,6 +1,8 @@
-<h1><%= @event.title %></h1><br>
-<h2><%= @event.description %></h2><br>
+<div id="garden-2">
+<h1 id="heading-3"><%= @event.title %></h1><br>
+<h2 id="sub_heading-2"><%= @event.description %></h2><br>
 
+<div id="central_button">
 <h4>Stat Effects:</h4>
 <p>
     Hunger: <%= @event.hunger_score %><br>
@@ -9,6 +11,9 @@
     Neighborhood Cred: <%= @event.cred_score %><br>
 
 </p>
+</div>
 
-<h3><%= button_to "Return to Neighborhood", neighborhood_path(@event.neighborhood), :method => :get, class: "genericButton" %></h3>
+<h3 id="travel_button"><%= button_to "Return to Neighborhood", neighborhood_path(@event.neighborhood), :method => :get, class: "genericButton" %></h3>
+
+</div>
 

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :logged_in?, :redirect_user, :set_user, :playing?, :set_cat, :day, :menupics, :random_cat_pic, :random_pet_pics
+    helper_method :logged_in?, :redirect_user, :set_user, :playing?, :set_cat, :day, :menupics, :random_cat_pic, :random_pet_pics, :random_groom_pics
 
     def logged_in?
         !!session[:user_id]
@@ -70,4 +70,10 @@ class ApplicationController < ActionController::Base
         PETPICS.sample
     end
 
+    GROOMPICS = ["https://media.istockphoto.com/videos/cat-grooming-video-id845399712?s=640x640", "https://thumbs.dreamstime.com/b/grey-cat-grooming-its-tail-grey-cat-grooming-its-tail-tounge-123991026.jpg", "https://media.istockphoto.com/videos/cat-clean-body-and-paw-by-itself-while-before-sleep-look-so-relax-and-video-id880901836?s=640x640", "https://previews.123rf.com/images/nungning20/nungning201805/nungning20180500076/102004488-tricolor-cat-stick-tongue-out-and-licking-itself-cat-grooming.jpg", "https://media.istockphoto.com/videos/tabby-cat-selfgrooming-video-id996272110?s=640x640"]
+
+
+    def random_groom_pics
+        GROOMPICS.sample
+    end
 end
