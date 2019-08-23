@@ -170,7 +170,7 @@ n1p1 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They gr
 
 n1p2 = Event.create(title: "Cold shower!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0, posh_event: true, img_url: "https://image.freepik.com/free-vector/bucket-spilt-ink_1308-18973.jpg")
 
-n1p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: 1, cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2016/05/27/18/26/german-shepherd-1420404_1280.png")
+n1p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: 1, cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2014/04/03/11/08/dog-311830_1280.png")
 
 #n2 events
 
@@ -188,7 +188,7 @@ n2p1 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They gr
 
 n2p2 = Event.create(title: "Cold shower!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0, posh_event: true, img_url: "https://image.freepik.com/free-vector/bucket-spilt-ink_1308-18973.jpg")
 
-n2p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: (+ 1), cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2016/05/27/18/26/german-shepherd-1420404_1280.png")
+n2p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: (+ 1), cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2014/04/03/11/08/dog-311830_1280.png")
 
 #n3 events
 
@@ -206,11 +206,11 @@ n3p1 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They gr
 
 n3p2 = Event.create(title: "Cold shower!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0, posh_event: true, img_url: "https://image.freepik.com/free-vector/bucket-spilt-ink_1308-18973.jpg")
 
-n3p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: (+ 1), cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2016/05/27/18/26/german-shepherd-1420404_1280.png")
+n3p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: (+ 1), cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2014/04/03/11/08/dog-311830_1280.png")
 
 #n4 events
 
-n4e1 = Event.create(title: "You encounter a neighborhood dog. It growls menacingly!", description: "You run for your life, but it bites you!", hazard_rating: 3, lives_score: - 1, hunger_score: - 1, scraggliness_score: - 1, cred_score: 0, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2016/05/27/18/26/german-shepherd-1420404_1280.png")
+n4e1 = Event.create(title: "You encounter a neighborhood dog. It growls menacingly!", description: "You run for your life, but it bites you!", hazard_rating: 3, lives_score: - 1, hunger_score: - 1, scraggliness_score: - 1, cred_score: 0, posh_event: false, img_url: "https://image.freepik.com/free-vector/hand-painted-wolf-design_1152-84.jpg")
 
 n4e2 = Event.create(title: "A group of children throw garbage at you!", description: "What is wrong with this neighborhood??", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 2, cred_score: 0, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2013/07/12/14/27/apple-148226__480.png")
 
@@ -224,7 +224,7 @@ n4p1 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They gr
 
 n4p2 = Event.create(title: "Cold shower!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0, posh_event: true, img_url: "https://image.freepik.com/free-vector/bucket-spilt-ink_1308-18973.jpg")
 
-n4p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: (+ 1), cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2016/05/27/18/26/german-shepherd-1420404_1280.png")
+n4p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: (+ 1), cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2014/04/03/11/08/dog-311830_1280.png")
 
 
 n1.events << n1e1 << n1e2 << n1e3 << n1c1 << n1c2 << n1p1 << n1p2 << n1p3

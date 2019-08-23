@@ -148,6 +148,12 @@
     align-self: center;
     margin: 0 auto;
 }
+
+#flashError{
+    grid-column-start: 5;
+    grid-row-start: 6;
+    text-align: center;
+}
   
 #mycat{
     grid-column-start: 0;
