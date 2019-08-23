@@ -1,18 +1,22 @@
-<h1>Welcome to a bright new day in Meowtropolis!</h1>
+<div id="garden-2">
 
-<h2>Time to get out there and win some food and love.</h2>
+<h1 id="heading-3">Welcome to a bright new day in Meowtropolis!</h1>
+
+<h2 id="sub_heading-2">Time to get out there and win some food and love.</h2>
 
 <% if @starving %>
-    <p>
+    <p id="right_menu">
     Uh oh! looks like you ended the day starving yesterday. You've lost one life. Best get plenty of food today!
     </p>
 <% end %>
 
 <%= render "current_stats" %>
 
-
+<div id="central_button">
 <% if session[:neighborhood] %>
     <h3><%= button_to "Begin", neighborhood_path(session[:neighborhood]["id"]), :method => :get, class: "genericButton" %></h3>
 <% else %>
     <h3><%= button_to "Begin", '/neighborhoods', :method => :get, class: "genericButton" %></h3>
 <% end %>
+</div>
+</div>

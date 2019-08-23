@@ -1,8 +1,10 @@
-visiting a family! stuff will happen!
-<h3><%= @msg %></h3>
-<p><%= @interaction %></p>
+<div id="garden-2">
+<h3 id="heading-3"><%= @msg %></h3>
+<p id="sub_heading-2"><%= @interaction %></p>
 
-<h3><%= button_to "Return to the neighborhood", neighborhood_path(@family.neighborhood), :method => :get, class: "genericButton" %></h3>
+<img src=<%=@ppic%> alt='Catto getting pets'>
+
+<h3 id="travel_button"><%= button_to "Return to the neighborhood", neighborhood_path(@family.neighborhood), :method => :get, class: "genericButton" %></h3>
 
 
-<%# something like .sample from  %>
+</div>
