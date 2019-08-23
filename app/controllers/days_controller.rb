@@ -14,19 +14,23 @@ class DaysController < ApplicationController
             @cat.close_call(-1) if @starving
             @starving = night_hunger
         end
+        @cat.clean(2)
     end
  
     private
 
     def night_hunger
-        @cat.clean(2)
         if @cat.hunger > 4
             @cat.hunger = 6
             @cat.save
             return true
         else
             @cat.eat(-4)
-            return false
+            if @cat.hunger > 4
+                return true
+            else
+                return false
+            end
         end
     end
 
