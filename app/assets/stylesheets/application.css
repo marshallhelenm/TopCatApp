@@ -79,6 +79,12 @@
     grid-row-start: 2;
     text-align: center;
  }
+ #sub_heading-3{
+    grid-column-start: 2;
+    grid-column-end: -2;
+    grid-row-start: 2;
+    text-align: center;
+ }
 
  #neighborhood-1 {
      
@@ -227,6 +233,15 @@
 #right_statmenu{
     grid-column-start: 3;
     grid-row-start: 4;
+} 
+
+#right_statmenu2{
+    color: red;
+    grid-column-start: 2;
+    grid-column-end: -2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    text-align: center;
 }  
 
 #day_end_statmenu{
@@ -251,6 +266,13 @@
     grid-row-start: 8;
     text-align: center;
 }
+#central_button-4{
+    grid-column-start: 10;
+    grid-column-end: 12;
+    grid-row-start: 7;
+    text-align: center;
+}
+
 
 #central_stat{
     grid-column-start: 2;

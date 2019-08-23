@@ -1,18 +1,33 @@
-<div id="garden-2">
+<div id="garden-4">
 
-<h1 id="heading-3">Welcome to a bright new day in Meowtropolis!</h1>
+<h1 id="heading-4">Welcome to a bright new day in Meowtropolis!</h1>
 
-<h2 id="sub_heading-2">Another night on the streets has left you a little dirtier than before. Time to get out there and win some food and love.</h2>
+<h2 id="sub_heading-3">Another night on the streets has left you a little dirtier than before. Time to get out there and win some food and love.</h2>
 
 <% if @starving %>
-    <p id="right_statmenu">
+    <p id="right_statmenu2">
     Uh oh! looks like you ended the day starving yesterday. You've lost one life. Best get plenty of food today!
     </p>
 <% end %>
 
-<%= render "current_stats" %>
+<div id="day_end_statmenu">
+<h3><%= @cat.name %>'s Stats</h3>
+<br><%= @cat.name %> has <%= @cat.lives %> lives left.
+<br><%= @cat.name %> has a hunger score of <%= @cat.hunger %>.
+<br><%= @cat.name %> has a scraggliness score of <%= @cat.scraggliness %>.
+<br><%= @cat.name %>'s favorite family is <%= @cat.favorite_family %>.
+<br>
+<% if !@cat.territories.empty? %>
+    <%= @cat.name %> is known in the following neighborhoods:<br>
+    <% @cat.territories.each do |t| %>
+        <%= @cat.name %> has <%= t.cred %> cred in <%= t.neighborhood_name %>.<br>
+    <% end %>
+<% else %>
+    <%= @cat.name %> isn't known in any neighborhoods yet.
+<% end %>
+</div>
 
-<div id="central_button">
+<div id="central_button-4">
 <% if session[:neighborhood] %>
     <h3><%= button_to "Begin", neighborhood_path(session[:neighborhood]["id"]), :method => :get, class: "genericButton" %></h3>
 <% else %>
@@ -20,7 +35,7 @@
 <% end %>
 </div>
 
-<div id="low_button">
+<div id="low_button-2">
 <img src= "https://omaharentalads.com/images/ray-clipart-sun-japanese-2.png" height=200 width=400>
 </div>
 </div>
