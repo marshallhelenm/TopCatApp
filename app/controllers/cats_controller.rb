@@ -17,7 +17,7 @@ class CatsController < ApplicationController
 
     def new
         @cat = Cat.new
-        @pic = session[:catpics].sample
+        @pic = session[:catpics].values.sample
         menupics
     end
 

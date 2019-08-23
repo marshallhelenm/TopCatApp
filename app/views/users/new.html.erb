@@ -1,6 +1,6 @@
 <div id="garden-3">
 
-<img src=<%=session[:catpics].sample%> id="catpic" alt='A picture of a happy cat'>
+<img src=<%=session[:catpics].values.sample%> id="catpic" alt='A picture of a happy cat'>
 <h1 id="title">Top Cat</h1>
 <% if @user.errors.any? %>
     <% @user.errors.full_messages.each do |msg| %>
