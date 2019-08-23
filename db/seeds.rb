@@ -66,15 +66,16 @@ def seed_cats
 end
 
 def seed_relationships
-    cats = Cat.all.collect do |cat| 
-        cat.id 
-    end
     Family.all.each do |fam|
-        rel = Relationship.create(family_id: fam.id,
-            cat_id: cats.sample,
-            affection: rand(0..100)
-        )
-        cats.delete(rel.cat_id)
+        cats = Cat.all.collect do |cat| 
+            cat.id 
+        end
+        5.times do 
+            Relationship.create(family_id: fam.id,
+                cat_id: cats.shuffle!.pop,
+                affection: rand(0..100)
+            )
+        end
     end
     puts "Successfully seeded Relationships!"
 end

@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+
  */
 /* neighborhood grid */
  #garden {
@@ -21,6 +22,12 @@
     height: 600px;
     margin: 15px;
  }
+
+html * {
+    font-family: "Arial Rounded MT Bold" !important;
+}
+
+
 /* home screen */
  #garden-2 {
     display: grid;
@@ -46,7 +53,7 @@
  }
 
  #heading {
-    color: blue;
+    color: #063D44;
     text-align: center;
     grid-column-start: 3;
  }
@@ -58,7 +65,7 @@
  }
 
  #heading-2 {
-    color: blue;
+    color: #063D44;
     text-align: center;
     grid-column-start: 2;
  }
