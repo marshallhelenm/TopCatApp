@@ -79,7 +79,7 @@ class Cat < ApplicationRecord
         end 
     end
 
-
+ 
 
     ####analytics####
 

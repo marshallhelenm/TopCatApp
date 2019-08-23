@@ -25,6 +25,7 @@ c3 = Cat.create(name: "Ramses", breed: "Sphynx", description: "Wrinkled and rega
 c3.set_stats
 c4 = Cat.create(name: "Precious", breed: "Exotic Shorthair", description: "Her face is rather smushed.", user_id: u4.id)
 c4.set_stats
+Cat.update(days: 0)
 
 
 
@@ -97,7 +98,7 @@ n1p1 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They gr
 
 n1p2 = Event.create(title: "Cold shower!", description: "Ack, what a filthy cat! They throw a bucket of water at  you. You run away, marginally cleaner, though very displeased.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: (- 1), cred_score: 0, posh_event: true)
 
-n1p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: (+ 1), cred_score: 0, posh_event: true)
+n1p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You hear angry barking from inside the door as the home ownders sic their dog on you! You run, but not fast enough. Teeth snap down on your tail!", hazard_rating: 0, lives_score: - 1, hunger_score: - 1, scraggliness_score: 1, cred_score: 0, posh_event: true)
 
 #n2 events
 

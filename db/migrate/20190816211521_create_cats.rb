@@ -9,6 +9,7 @@ class CreateCats < ActiveRecord::Migration[5.2]
       t.integer :lives
       t.integer :user_id
       t.string :img_url
+      t.integer :days
 
       t.timestamps
     end

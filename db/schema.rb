@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_08_21_180157) do
     t.integer "lives"
     t.integer "user_id"
     t.string "img_url"
+    t.integer "days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

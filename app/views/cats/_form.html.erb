@@ -6,14 +6,12 @@
 </div>
 <% end %>
 
-
+ 
 <div id="new_form">
 <%= form_for @cat do |c| %>
 
-    <%= c.label :img_url %><br>
+    <%= c.label :img_url, "Pick a Kitty:" %><br>
     <%= c.select :img_url, options_for_select(@menupics) %><br>
-    Upload your own image:<br>
-    <%= c.text_field :img_url %><br>
     
     <%= c.label :name %><br>
     <%= c.text_field :name %><br>
@@ -22,7 +20,7 @@
     <%= c.text_field :breed %><br>
     
     <%= c.label :description %><br>
-    <%= c.text_area :description %><br>
+    <%= c.text_area :description, :maxlength => 150 %><br>
 
     <%= c.submit %>
 <% end %>

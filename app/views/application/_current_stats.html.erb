@@ -7,12 +7,12 @@
 <br><%= @cat.name %> has a scraggliness score of <%= @cat.scraggliness %>.
 <br><%= @cat.name %>'s favorite family is <%= @cat.favorite_family %>.
 <br>
-<% if @cat.territories %>
+<% if !@cat.territories.empty? %>
     <%= @cat.name %> is known in the following neighborhoods:<br>
     <% @cat.territories.each do |t| %>
         <%= @cat.name %> has <%= t.cred %> cred in <%= t.neighborhood_name %>.<br>
     <% end %>
 <% else %>
-    <% @cat.name %> isn't known in any neighborhoods yet.
+    <%= @cat.name %> isn't known in any neighborhoods yet.
 <% end %>
 </div>

@@ -1,0 +1,25 @@
+<div id="garden-3">
+
+<img src=<%=@cat.img_url%> id="catpic" alt='A picture of a happy cat'>
+<h1 id="title">Update User Info:</h1>
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+        <h2 id="flash"><%= msg %></h2>
+    <% end %>
+<% end %>
+
+<div id="new_form">
+<%= form_for @user do |f|%>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %><br><br>
+
+    <%= f.label :password %><br>
+    <%= f.password_field :password %><br><br>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %><br><br>
+    
+    <%= f.submit 'Sign Up'%>
+<% end %>
+</div>
+
+</div>
