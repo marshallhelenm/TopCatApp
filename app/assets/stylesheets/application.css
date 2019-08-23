@@ -87,8 +87,8 @@ html * {
     text-align: center;
  }
  #sub_heading-3{
-    grid-column-start: 2;
-    grid-column-end: -2;
+    grid-column-start: 1;
+    grid-column-end: -1;
     grid-row-start: 2;
     text-align: center;
  }
