@@ -8,6 +8,7 @@
 <% @count = 1 %>
 <% @neighborhoods.each do |n| %>
     <div id="neighborhood-<%=@count%>">
+    <img src="https://cdn.pixabay.com/photo/2019/07/03/13/28/emergency-4314567_960_720.png" alt="pic" height=120 width=120>
     <h3><%= button_to n.name, neighborhood_path(n), :method => :get, class: "genericButton" %></h3>
     <p><%= n.description %></p>
     </div>
