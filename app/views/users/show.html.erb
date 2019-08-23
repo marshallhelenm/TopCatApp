@@ -5,4 +5,5 @@
 <% @user.cats.each do |cat| %>
     <%= cat.name %>
 <% end %>
+<%= button_to 'Edit Account', edit_user_path(@user), :method => :get, class: "genericButton" %><br>
 </ul>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
+    before_action :redirect_user, :set_cat
 
 
     def index #game rules
@@ -27,8 +28,12 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = User.update(user_params)
-        redirect_to user_path(@user)
+        if @user.update(user_params)
+            session[:user_id] = @user.id
+            redirect_to '/home'
+        else
+            render :edit
+        end
     end
 
     def destroy
