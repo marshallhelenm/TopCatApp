@@ -9,6 +9,7 @@ class Cat < ApplicationRecord
         self.hunger = 2
         self.lives = 9
         self.scraggliness = 2
+        self.days = 0
         self.save
     end
 

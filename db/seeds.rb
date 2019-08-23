@@ -6,11 +6,91 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'Faker'
+
+
 Cat.destroy_all
 Family.destroy_all
 Neighborhood.destroy_all
 Event.destroy_all
 User.destroy_all
+
+
+
+CATPICS = {
+    "White Cat 1" => "https://cdn.pixabay.com/photo/2016/10/11/18/18/white-cat-1732388__480.png",
+    "White Cat 2" => "https://cdn.pixabay.com/photo/2016/10/11/18/18/white-cat-1732386__480.png",
+    "Tortie Cat 1" => "https://cdn.pixabay.com/photo/2016/10/11/18/18/tortie-cat-1732385__480.png",
+    "Tortie Cat 2" => "https://cdn.pixabay.com/photo/2016/10/11/18/18/tortie-cat-1732384__480.png",
+    "Orange Tabby 1" => "https://cdn.pixabay.com/photo/2016/10/11/18/17/orange-tabby-cat-1732377__480.png",
+    "Orange Tabby 2" => "https://cdn.pixabay.com/photo/2016/10/11/18/17/orange-tabby-cat-1732376__480.png",
+    "Gray Tabby 1" => "https://cdn.pixabay.com/photo/2016/10/11/18/17/gray-tabby-cat-1732374__480.png",
+    "Gray Tabby 2" => "https://cdn.pixabay.com/photo/2016/10/11/18/17/gray-tabby-cat-1732372__480.png",
+    "Calico Cat 1" => "https://cdn.pixabay.com/photo/2016/10/11/18/17/calico-cat-1732371__480.png",
+    "Calico Cat 2" => "https://cdn.pixabay.com/photo/2016/10/11/18/17/calico-cat-1732370__480.png",
+    "Black Cat 1" => "https://cdn.pixabay.com/photo/2016/10/11/18/17/black-cat-1732366__480.png",
+    "Black Cat 2" => "https://cdn.pixabay.com/photo/2016/10/11/18/17/black-cat-1732367__480.png"
+}
+
+WORDS = ["active", "affectionate", "agile", "agreeable", "alert", "amusing", "anxious", "beautiful", "behavioral", "beloved", "best", "big", "bossy", "bright", "bright-eyed", "calico", "calm", "caring", "catlike", "cheerful", "chill", "chubby", "clean", "clever", "clumsy", "comic", "courageous", "crafty", "crazy", "crazy cute", "cuddly", "curious", "curled up", "cute", "daring", "delicate", "demanding", "dependent", "devoted", "dog-friendly", "domestic", "domesticated", "dominant", "eager-to-please", "likable", "little", "long-haired", "lovable", "loved", "loving", "loyal", "mellow", "merry", "mischievous", "moody", "muscular", "mysterious", "naughty", "needy", "neurotic", "neutered", "orange", "outgoing", "pampered", "part-dog", "people-friendly", "perfect", "personable", "picky", "playful", "pleasant", "pouncing", "precious", "pretty", "priceless", "protective", "purebred", "purrfect", "purring", "queenly", "quick", "quiet", "quirky", "ready-to-please", "rebellious", "regal", "relaxed", "rescued", "entertaining", "faithful", "family-friendly", "fast", "feline", "fixed", "fluffy", "foolish", "four-legged", "friendly", "frisky", "fun", "funny", "furry", "fuzzy", "gentle", "giant", "good", "good-natured", "goofy", "gorgeous", "graceful", "greedy", "grumpy", "handsome", "happy", "healthy", "heartwarming", "hilarious", "housebroken", "huggable", "hungry", "in good health", "independent", "instinctual", "intelligent", "jolly", "joyful", "keen", "kid-friendly", "kindhearted", "kingly", "laidback", "lazy", "rubbing", "scratchable", "scrawny", "scruffy", "sensitive", "shiny", "short-haired", "shy", "silly", "sleek", "sleepy", "smart", "sneaky", "snuggly", "soft", "spayed", "spoiled", "spoiled rotten", "spotted", "spry", "stray", "stubborn", "submissive", "sultry", "superior", "sure-footed", "sweet", "tabby", "temperamental", "territorial", "timid", "tortoiseshell", "tough", "trainable", "trained", "trustworthy", "trusty", "unique", "warm", "well-bred", "wild", "willing", "wonderful"] 
+
+
+
+
+
+
+
+
+#######Users#######
+def seed_users
+    20.times do
+        word = Faker::Creature::Animal.unique.name
+        User.create(username: word, password: word)
+    end
+    puts "Successfully seeded Users!"
+end
+
+
+def seed_cats
+    User.all.each do |user|
+        cat = Cat.create(
+            name: Faker::Creature::Cat.unique.name,
+            breed: Faker::Creature::Cat.breed,
+            description: "#{WORDS.sample} & #{WORDS.sample}",
+            img_url: CATPICS.keys.sample
+        )
+        cat.set_stats
+        user.cats << cat
+    end
+    puts "Successfully seeded Cats!"
+end
+
+def seed_relationships
+    cats = Cat.all.collect do |cat| 
+        cat.id 
+    end
+    Family.all.each do |fam|
+        rel = Relationship.create(family_id: fam.id,
+            cat_id: cats.sample,
+            affection: rand(0..100)
+        )
+        cats.delete(rel.cat_id)
+    end
+    puts "Successfully seeded Relationships!"
+end
+
+def seed_territories
+    Neighborhood.all.each do |neigh|
+        cats = Cat.all.collect do |cat| 
+            cat.id 
+        end
+        10.times do 
+        Territory.create(cat_id: cats.shuffle!.pop, neighborhood_id: neigh.id, cat_status: rand(0..10))
+        end
+    end
+    puts "Successfully seeded Territories!"
+end
+
 
 u1 = User.create(username: "testuser", password: "test")
 u2 = User.create(username: "bob", password: "bob")
@@ -28,6 +108,7 @@ c4.set_stats
 Cat.update(days: 0)
 
 
+#####neighborhoods and families######
 
 n1 = Neighborhood.create(name: "Graystone Heights", description: "increasingly swank", danger_rating: 2)
 
@@ -71,17 +152,8 @@ f16 = Family.create(name: "Whitakker", description: "A pretty average family wit
 n4.families << f13 << f14 << f15 << f16
 
 
-c1.neighborhoods << n1
-c2.neighborhoods << n4
-c3.neighborhoods << n2
-c4.neighborhoods << n3
 
-
-
-
-
-c1.neighborhoods << n1 << n2
-
+#####events#####
 
 #n1 events
 n1e1 = Event.create(title: "A coyote!", description: "What is that doing in this neighborhood???", hazard_rating: 3, lives_score: - 1, hunger_score: 0, scraggliness_score: + 1, cred_score: 0, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
@@ -92,7 +164,7 @@ n1e3 = Event.create(title: "Broken bag of kibble!", description: "Dog food is st
 
 n1c1 = Event.create(title: "A bright orange stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
-n1c2 = Event.create(title: "You sneak up on a bright orange stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
+n1c2 = Event.create(title: "You sneak up on a bright orange stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 2, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
 n1p1 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They grab a broom and chase you away from the door. You bolt toward the street, easily dodging their clumsy attacks.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
@@ -110,7 +182,7 @@ n2e3 = Event.create(title: "You find an open composting bin!", description: "Fre
 
 n2c1 = Event.create(title: "A fat, odd smelling stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
-n2c2 = Event.create(title: "You sneak up on a fat, odd smelling stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
+n2c2 = Event.create(title: "You sneak up on a fat, odd smelling stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 2, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
 n2p1 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They grab a broom and chase you away from the door. You bolt toward the street, easily dodging their clumsy attacks.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
@@ -128,7 +200,7 @@ n3e3 = Event.create(title: "You pass a friendly old woman in the park", descript
 
 n3c1 = Event.create(title: "A prissy stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: - 1, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
-n3c2 = Event.create(title: "You sneak up on a prissy stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
+n3c2 = Event.create(title: "You sneak up on a prissy stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 2, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
 n3p1 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They grab a broom and chase you away from the door. You bolt toward the street, easily dodging their clumsy attacks.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
@@ -146,7 +218,7 @@ n4e3 = Event.create(title: "You find a mouse and begin to chase it!", descriptio
 
 n4c1 = Event.create(title: "A filthy stray cat catches you unawares!", description: "They get the better of you, and you slink away in shame.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 1, cred_score: - 1, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
-n4c2 = Event.create(title: "You sneak up on a filthy stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 1, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
+n4c2 = Event.create(title: "You sneak up on a filthy stray cat. Show them who's Top Cat around here!", description: "They flee in terror! The local neighborhood cats will remember this.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: + 2, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
 n4p1 = Event.create(title: "Git!", description: "Ack, what a filthy cat! They grab a broom and chase you away from the door. You bolt toward the street, easily dodging their clumsy attacks.", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: 0, cred_score: 0, posh_event: true, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
@@ -162,3 +234,9 @@ n4.events << n4e1 << n4e2 << n4e3 << n4c1 << n4c2 << n4p1 << n4p2 << n4p3
 
 
 n1.families << f1
+
+
+seed_users
+seed_cats
+seed_relationships
+seed_territories
