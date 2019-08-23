@@ -17,10 +17,13 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
+            session[:user] = @user
+            session[:cat] = Cat.new
             redirect_to '/cats/new'
         else
             render :new
         end
+
     end
 
     def edit
