@@ -1,9 +1,14 @@
-<h1>My Account</h1>
-<h3>Username: <%= @user.username %></h3>
-<h3>My Cats:</h3>
-<ul>
+<div id="garden-2">
+<h1 id="heading-2">My Account</h1>
+<h3 id="sub_heading-2">Username: <%= @user.username %></h3>
+<div id="central_button">
+<h3>My Cats</h3>
+
 <% @user.cats.each do |cat| %>
     <%= cat.name %>
 <% end %>
+<br>
 <%= button_to 'Edit Account', edit_user_path(@user), :method => :get, class: "genericButton" %><br>
-</ul>
+
+</div>
+</div>

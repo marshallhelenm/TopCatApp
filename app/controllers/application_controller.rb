@@ -64,13 +64,13 @@ class ApplicationController < ActionController::Base
         CATPICS.values.sample
     end
 
-    PETPICS = ["https://images2.minutemediacdn.com/image/upload/c_crop,h_359,w_640,x_0,y_61/f_auto,q_auto,w_1100/v1555432243/shape/mentalfloss/catscratch.jpg", "https://kittentoob.com/wp-content/uploads/2017/09/Pet-a-Cat.jpg", "http://cravingcatnip.com/wp-content/uploads/2016/10/happy-cat-getting-petted4.jpg", "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/things_you_learn_from_your_pet_slideshow/photolibrary_rm_photo_of_petting_cat.jpg"]
+    PETPICS = ["https://media1.tenor.com/images/76f8e2f9b8af6d26b6754ca7cba6cc98/tenor.gif?itemid=5828064", "https://78.media.tumblr.com/b1af988bed594114b844e8b542af802c/tumblr_peuxv0Cdh01xo6wolo1_1280.gif","https://i.imgur.com/9AezDBg.gif"]
 
     def random_pet_pics
         PETPICS.sample
     end
 
-    GROOMPICS = ["https://media.istockphoto.com/videos/cat-grooming-video-id845399712?s=640x640", "https://thumbs.dreamstime.com/b/grey-cat-grooming-its-tail-grey-cat-grooming-its-tail-tounge-123991026.jpg", "https://media.istockphoto.com/videos/cat-clean-body-and-paw-by-itself-while-before-sleep-look-so-relax-and-video-id880901836?s=640x640", "https://previews.123rf.com/images/nungning20/nungning201805/nungning20180500076/102004488-tricolor-cat-stick-tongue-out-and-licking-itself-cat-grooming.jpg", "https://media.istockphoto.com/videos/tabby-cat-selfgrooming-video-id996272110?s=640x640"]
+    GROOMPICS = ["https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a1ca53e7-c323-4cb1-905b-2c82bd08bd87/dj7o8b-4eae16c8-71bd-4677-b087-8dad08f6c723.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ExY2E1M2U3LWMzMjMtNGNiMS05MDViLTJjODJiZDA4YmQ4N1wvZGo3bzhiLTRlYWUxNmM4LTcxYmQtNDY3Ny1iMDg3LThkYWQwOGY2YzcyMy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.PnGQ7t4tDYmuzG8EPUtEuwMzCpLD29Yyq4bTGCohOVw", "https://www.hacksforcats.com/wp-content/uploads/2017/11/cat-bath.jpg"]
 
 
     def random_groom_pics

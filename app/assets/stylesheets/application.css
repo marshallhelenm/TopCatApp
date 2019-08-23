@@ -105,6 +105,7 @@
 }
 
 #family-1 {
+    background:url();
     grid-column-start: 1;
     grid-row-start: 5;
     text-align: center;
@@ -207,6 +208,12 @@
     text-align: center;
 }
 
+#low_button{
+    grid-column-start: 2;
+    grid-row-start: 8;
+    text-align: center;
+}
+
 div.play_button input {
     background:url("https://res.cloudinary.com/dwfqeeh5f/image/upload/v1566531614/FlatIron/Top%20Cat/paw2.png") no-repeat;
     cursor: pointer;
@@ -300,14 +307,16 @@ div.play_button input {
     width: auto;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid black;
 }
 
 .eventpic{
-    grid-column-start: 5;
-    grid-row-start: 4;
+    grid-column-start: 2;
+    grid-row-start: 5;
     text-align: center;
     height: auto;
-    max-width: 100%;
+    max-width: 50%;
     align-self: center;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
