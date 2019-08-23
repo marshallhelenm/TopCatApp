@@ -24,6 +24,7 @@ class CatsController < ApplicationController
     def create
         @cat = Cat.new(cat_params)
         @cat.set_stats
+        @cat.img_url = cat_pic
         @cat.save
         @user.cats << @cat
         redirect_to '/home'
@@ -34,7 +35,9 @@ class CatsController < ApplicationController
     end
 
     def update
-        @cat = Cat.update(cat_params)
+        @cat.update(cat_params)
+        @cat.img_url = cat_pic
+        @cat.save
         redirect_to '/home'
     end
 
@@ -53,6 +56,10 @@ class CatsController < ApplicationController
 
     def cat_params
         params.require(:cat).permit(:name, :breed, :description)
+    end
+
+    def cat_pic
+        pic_string = session[:catpics][params[:cat][:"img_url"]]
     end
 
 end

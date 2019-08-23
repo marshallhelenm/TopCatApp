@@ -6,14 +6,12 @@
 </div>
 <% end %>
 
-
+ 
 <div id="new_form">
 <%= form_for @cat do |c| %>
 
     <%= c.label :img_url %><br>
     <%= c.select :img_url, options_for_select(@menupics) %><br>
-    Upload your own image:<br>
-    <%= c.text_field :img_url %><br>
     
     <%= c.label :name %><br>
     <%= c.text_field :name %><br>
