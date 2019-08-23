@@ -2,7 +2,7 @@
 <h3 id="heading-3"><%= @msg %></h3>
 <p id="sub_heading-2"><%= @interaction %></p>
 
-<img src=<%=@ppic%> alt='Catto getting pets'>
+<img src=<%=@ppic%> id="petpic" alt='Catto getting pets'>
 
 <h3 id="travel_button"><%= button_to "Return to the neighborhood", neighborhood_path(@family.neighborhood), :method => :get, class: "genericButton" %></h3>
 
