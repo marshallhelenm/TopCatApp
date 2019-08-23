@@ -1,6 +1,7 @@
 class CatsController < ApplicationController
     before_action :set_user, :redirect_user
     before_action :grab_cat, only: [:show, :edit, :update, :destroy]
+    before_action :set_cat, only: [:index, :show]
 
     def index
         @cats = Cat.all

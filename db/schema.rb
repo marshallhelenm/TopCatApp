@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_08_21_180157) do
     t.integer "scraggliness_score"
     t.integer "hunger_score"
     t.integer "lives_score"
+    t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cred_score"

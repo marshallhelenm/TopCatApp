@@ -23,7 +23,7 @@
       </a>
   <% if logged_in? %>
       <div class="item">
-        User: <%= @user.username %><br><br>Cat: <%= @cat.name %>
+        User: <%= session[:user]["username"] %><br><br>Cat: <%= session[:cat]["name"] %>
       </div>
   <% end %>
 

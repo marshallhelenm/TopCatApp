@@ -9,6 +9,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.integer :scraggliness_score
       t.integer :hunger_score
       t.integer :lives_score
+      t.string :img_url
 
       t.timestamps
     end

@@ -102,7 +102,7 @@ n1p3 = Event.create(title: "Sic 'em!", description: "Ack, what a filthy cat! You
 
 #n2 events
 
-n2e1 = Event.create(title: "You see a tasty looking plant", description: "You take a bite and start to feel woozy", hazard_rating: 3, lives_score: - 1, hunger_score: - 1, scraggliness_score: 0, cred_score: 0, posh_event: false)
+n2e1 = Event.create(title: "You see a tasty looking plant", description: "You take a bite and start to feel woozy", hazard_rating: 3, lives_score: - 1, hunger_score: - 1, scraggliness_score: 0, cred_score: 0, posh_event: false, img_url: "https://cdn.pixabay.com/photo/2012/04/14/16/53/flower-34592_1280.png")
 
 n2e2 = Event.create(title: "An excited toddler approaches you.", description: "They pet you with sticky hands. Gross...", hazard_rating: 0, lives_score: 0, hunger_score: 0, scraggliness_score: + 1, cred_score: 0, posh_event: false)
 

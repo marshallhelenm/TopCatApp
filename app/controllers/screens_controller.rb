@@ -10,6 +10,8 @@ class ScreensController < ApplicationController
 
 
     def show 
+        session[:user] = set_user
+        session[:cat] = set_cat
         session[:playing] = false
         session[:cat_id] = set_cat.id
         @mypic = @cat.img_url
