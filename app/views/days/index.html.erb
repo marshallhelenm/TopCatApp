@@ -1,14 +1,32 @@
-<div id="garden-2">
+<div id="garden-4">
 
-<h2 id="heading-3">That was a full day! Congrats on toughing it out another day on the mean streets of Meowtropolis.</h2> 
+<h2 id="heading-4">That was a full day! Congrats on toughing it out another day on the mean streets of Meowtropolis.</h2> 
 
-<%= render "current_stats" %>
+<div id="day_end_statmenu">
+<h3><%= @cat.name %>'s Stats</h3>
+<br><%= @cat.name %> has <%= @cat.lives %> lives left.
+<br><%= @cat.name %> has a hunger score of <%= @cat.hunger %>.
+<br><%= @cat.name %> has a scraggliness score of <%= @cat.scraggliness %>.
+<br><%= @cat.name %>'s favorite family is <%= @cat.favorite_family %>.
+<br>
+<% if !@cat.territories.empty? %>
+    <%= @cat.name %> is known in the following neighborhoods:<br>
+    <% @cat.territories.each do |t| %>
+        <%= @cat.name %> has <%= t.cred %> cred in <%= t.neighborhood_name %>.<br>
+    <% end %>
+<% else %>
+    <%= @cat.name %> isn't known in any neighborhoods yet.
+<% end %>
+</div>
 
-<div id="central_button">
+<div id="central_button-3">
 <h3><%= button_to "New Day", '/new_day', :method => :get, class: "genericButton" %>
+</div>
+
+<div id="central_button-2">
 <%= button_to "Home Screen", '/home', :method => :get, class: "genericButton" %></h3>
 </div>
 
-<div id="low_button">
-<img src="https://cdn.pixabay.com/photo/2016/02/17/01/02/cat-1204321_960_720.jpg" height=225 width=375 style='border:1px solid #000000'>
+<div id="low_button-2">
+<img src="https://cdn.pixabay.com/photo/2016/02/17/01/02/cat-1204321_960_720.jpg" height=225 width=425 style='border:1px solid #000000'>
 </div>
