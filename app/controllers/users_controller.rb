@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
-    before_action :redirect_user, :set_cat
-
+    before_action :redirect_user, except: [:new, :create]
 
     def index #game rules
     end
@@ -25,6 +24,7 @@ class UsersController < ApplicationController
     end
 
     def edit
+        set_cat
     end
 
     def update

@@ -6,7 +6,7 @@
 
 
 <% if session[:neighborhood] %>
-    <h3><%= button_to "Return", neighborhood_path(session[:neighborhood]["3"]), :method => :get, class: "genericButton" %></h3>
+    <h3><%= button_to "Return", neighborhood_path(session[:neighborhood]["id"]), :method => :get, class: "genericButton" %></h3>
 <% else %>
     <h3><%= button_to "Return", '/neighborhoods', :method => :get, class: "genericButton" %></h3>
 <% end %>

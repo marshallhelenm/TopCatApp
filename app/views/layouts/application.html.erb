@@ -16,12 +16,19 @@
 
 
   </head>
-  <% if !playing? %>
-
+  
     <div class="ui teal inverted menu">
       <a href="/" class="item">
         <h1>Top Cat</h1>
       </a>
+  <% if logged_in? %>
+      <div class="item">
+        User: <%= @user.username %><br><br>Cat: <%= @cat.name %>
+      </div>
+  <% end %>
+
+  <% if !playing? %>
+
       <div class="right menu">
         <% if logged_in? %>
         <%= link_to 'Logout', logout_path, {class: 'item', method: :delete} %>
@@ -31,14 +38,17 @@
 
   <% else %>
 
-    <div class="ui teal inverted menu">
-      <a href="/home" class="item">
-        <h1>Top Cat PLAYING</h1>
-      </a>
+      <div class="item">
+        Hunger: <%= @cat.hunger %><br><br>
+        Scraggliness: <%= @cat.scraggliness %>
+      </div>
       <div class="item">
         Lives: <%= @cat.lives %>
-        Hunger: <%= @cat.hunger %>
-        Scraggliness: <%= @cat.scraggliness %>
+      </div>
+      <div class="item">
+        <% if session[:actions] %>
+          Actions: <%= 5 - session[:actions] %>
+        <% end %>
       </div>
       <div class="right menu">
             <% if logged_in? %>

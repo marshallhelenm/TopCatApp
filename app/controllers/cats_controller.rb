@@ -25,6 +25,7 @@ class CatsController < ApplicationController
         @cat = Cat.new(cat_params)
         @cat.set_stats
         @cat.img_url = cat_pic
+        @cat.days = 0
         @cat.save
         @user.cats << @cat
         redirect_to '/home'

@@ -10,7 +10,7 @@
 <div id="new_form">
 <%= form_for @cat do |c| %>
 
-    <%= c.label :img_url %><br>
+    <%= c.label :img_url, "Pick a Kitty:" %><br>
     <%= c.select :img_url, options_for_select(@menupics) %><br>
     
     <%= c.label :name %><br>

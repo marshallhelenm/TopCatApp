@@ -25,6 +25,7 @@ c3 = Cat.create(name: "Ramses", breed: "Sphynx", description: "Wrinkled and rega
 c3.set_stats
 c4 = Cat.create(name: "Precious", breed: "Exotic Shorthair", description: "Her face is rather smushed.", user_id: u4.id)
 c4.set_stats
+Cat.update(days: 0)
 
 
 
