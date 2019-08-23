@@ -9,7 +9,7 @@
 <% @neighborhood.families.each do |fam| %>
     <div id="family-<%=@count%>">
     <img src="https://www.sccpre.cat/mypng/detail/7-70738_free-simple-house-clip-art-simple-house-clip.png" style='border:1px solid #000000' alt="pic" height=100 width=100>
-    <h3><%= button_to fam.name, family_path(fam), :method => :get %></h3>
+    <h3><%= button_to fam.name, family_path(fam), :method => :get, class: "genericButton" %></h3>
     <p><%= fam.description %></p>
     </div>
     <% @count += 1 %>
@@ -17,5 +17,6 @@
 
 
 <h3 id="travel_button"><%= button_to "Leave Neighborhood", '/exit_neighborhood', :method => :get %></h3>
+<%# <div><img src="https://cdn.pixabay.com/photo/2014/04/02/14/07/black-306213_1280.png" alt="paws" id="leave_paws"></div>
 </div>
-    
+     %>

@@ -245,9 +245,6 @@ div.play_button input {
     background-position: center;
     justify-content: center;
     grid-column-start: 2;
-    grid-row-start: 6;
-    z-index: 0 !important;
-    position: relative;
 
 }
 
@@ -339,4 +336,17 @@ div.play_button input {
     align-self: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.travel_button{
+    grid-column-start: 2;
+    grid-row-start: 9;
+    text-align: center;
+}
+
+#leave_paws{
+    grid-column-start: 2;
+    grid-row-start: 9;
+    text-align: center;
+    max-width: 50%;
 }
