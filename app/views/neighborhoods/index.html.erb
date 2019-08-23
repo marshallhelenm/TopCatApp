@@ -8,7 +8,7 @@
 <% @count = 1 %>
 <% @neighborhoods.each do |n| %>
     <div id="neighborhood-<%=@count%>">
-    <h3><%= button_to n.name, neighborhood_path(n), :method => :get %></h3>
+    <h3><%= button_to n.name, neighborhood_path(n), :method => :get, class: "genericButton" %></h3>
     <p><%= n.description %></p>
     </div>
     <% @count += 1 %>

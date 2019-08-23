@@ -12,7 +12,6 @@ class AuthController < ApplicationController
     
     def login
         session[:catpics] = CATPICS
-        @pic = random_cat_pic
     end
 
     def verify
