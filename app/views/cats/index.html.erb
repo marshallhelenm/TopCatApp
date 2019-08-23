@@ -4,9 +4,9 @@
 
 
 <div id="left_statmenu">
-<h4>Average Affection per Cat: <%= @avg_affection %></h4>
 
-<h4>Highest affection overall:</h4>
+<h4>Average Affection per Cat: <%= @avg_affection %></h4>
+<h3>Highest affection overall:</h3>
 
 <p>
     <% @high.each do |cat| %>
@@ -20,7 +20,7 @@
 </div>
 
 <div id="central_stat">
-<h4>Best Relationships:</h4>
+<h3>Best Relationships:</h3>
 
 <p>
     <% @best.each do |rel| %>
@@ -34,7 +34,7 @@
 </p>
 </div>
 <div id="right_statmenu">
-<h4>Most generous families:</h4>
+<h3>Most generous families:</h3>
 
 <p>
     <% @friendliest.each do |fam| %>

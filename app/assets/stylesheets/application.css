@@ -230,6 +230,7 @@ html * {
 #left_statmenu{
     grid-column-start: 1;
     grid-row-start: 4;
+    text-align: center;
 }
 
 #right_menu{
