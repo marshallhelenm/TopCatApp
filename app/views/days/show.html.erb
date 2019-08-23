@@ -5,7 +5,7 @@
 <h2 id="sub_heading-2">Another night on the streets has left you a little dirtier than before. Time to get out there and win some food and love.</h2>
 
 <% if @starving %>
-    <p id="right_menu">
+    <p id="right_statmenu">
     Uh oh! looks like you ended the day starving yesterday. You've lost one life. Best get plenty of food today!
     </p>
 <% end %>
@@ -18,5 +18,9 @@
 <% else %>
     <h3><%= button_to "Begin", '/neighborhoods', :method => :get, class: "genericButton" %></h3>
 <% end %>
+</div>
+
+<div id="low_button">
+<img src= "https://omaharentalads.com/images/ray-clipart-sun-japanese-2.png" height=200 width=400>
 </div>
 </div>
