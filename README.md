@@ -1,7 +1,10 @@
-# README
+#TopCatApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Ruby on Rails based adventure game, built in one week by Helen Marshall & Brittan Fairchild. Play as a neighborhood cat, competing to be the most beloved stray around.
+https://topcatapp.herokuapp.com/
+
+
+
 
 Things you may want to cover:
 
